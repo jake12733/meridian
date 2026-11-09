@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MERIDIAN | 메리디안 전략 컨설팅</title>
+<meta name="description" content="메리디안 컨설팅 - 경영 전략, 조직 설계, 디지털 전환, M&A 자문까지. 결정의 순간, 가장 정확한 방향을 제시합니다.">
+<meta property="og:title" content="MERIDIAN | 메리디안 전략 컨설팅">
+<meta property="og:description" content="결정의 순간, 가장 정확한 방향을.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --navy:#0b131f;
+  --navy-2:#101b2b;
+  --navy-3:#16243a;
+  --gold:#d4af37;
+  --gold-soft:#e6cc7a;
+  --gold-dim:rgba(212,175,55,.18);
+  --ivory:#f4efe4;
+  --text:#c9cdd6;
+  --muted:#8a93a3;
+  --line:rgba(212,175,55,.22);
+  --serif-en:'Cormorant Garamond',serif;
+  --serif-ko:'Noto Serif KR',serif;
+  --sans:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.75;letter-spacing:-.01em;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--gold);color:var(--navy)}
+.container{width:min(1240px,90%);margin:0 auto}
+.eyebrow{font-family:var(--serif-en);font-style:italic;color:var(--gold);font-size:1.05rem;letter-spacing:.12em;display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--gold)}
+.h-sec{font-family:var(--serif-ko);font-weight:400;color:var(--ivory);font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.35;letter-spacing:-.03em;margin-top:18px}
+.h-sec em{font-style:normal;color:var(--gold)}
+.lead{color:var(--muted);font-size:1.02rem;max-width:560px;margin-top:22px}
+section{position:relative}
+.pad{padding:150px 0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:17px 34px;font-size:.92rem;font-weight:500;letter-spacing:.06em;border:1px solid var(--gold);transition:all .5s var(--ease);position:relative;overflow:hidden;cursor:pointer;font-family:var(--sans)}
+.btn span.arr{transition:transform .5s var(--ease)}
+.btn:hover span.arr{transform:translateX(6px)}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
+.btn-line{color:var(--ivory);border-color:rgba(244,239,228,.35)}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:100;transition:all .5s var(--ease);border-bottom:1px solid transparent}
+header.scrolled{background:rgba(11,19,31,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:92px;transition:height .5s var(--ease)}
+header.scrolled .nav{height:74px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-mark{width:38px;height:38px;border:1px solid var(--gold);display:grid;place-items:center;transform:rotate(45deg)}
+.logo-mark i{width:10px;height:10px;background:var(--gold);display:block}
+.logo-text{font-family:var(--serif-en);font-size:1.45rem;letter-spacing:.32em;color:var(--ivory);font-weight:500}
+.logo-text small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.42em;color:var(--gold);margin-top:-4px;font-weight:400}
+.menu{display:flex;gap:46px;align-items:center}
+.menu a{font-size:.88rem;letter-spacing:.08em;color:var(--text);position:relative;padding:4px 0;transition:color .3s}
+.menu a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--gold);transition:width .4s var(--ease)}
+.menu a:hover{color:var(--gold)}
+.menu a:hover::after{width:100%}
+.nav .btn{padding:12px 24px;font-size:.82rem}
+.burger{display:none;width:32px;height:20px;position:relative;background:none;border:0;cursor:pointer}
+.burger span{position:absolute;left:0;width:100%;height:1px;background:var(--ivory);transition:all .4s var(--ease)}
+.burger span:nth-child(1){top:0}.burger span:nth-child(2){top:10px}.burger span:nth-child(3){top:20px}
+.burger.on span:nth-child(1){top:10px;transform:rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){top:10px;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;background:var(--navy);z-index:90;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:34px;opacity:0;pointer-events:none;transition:opacity .5s var(--ease)}
+.mobile-menu.on{opacity:1;pointer-events:auto}
+.mobile-menu a{font-family:var(--serif-ko);font-size:1.6rem;color:var(--ivory)}
+.mobile-menu a:hover{color:var(--gold)}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:140px 0 120px}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2000&q=80') center/cover;opacity:.16;transform:scale(1.08);animation:slowzoom 24s ease-in-out infinite alternate;filter:grayscale(.4)}
+@keyframes slowzoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,transparent 0%,var(--navy) 72%),linear-gradient(180deg,rgba(11,19,31,.3) 0%,var(--navy) 100%);pointer-events:none}
+#stars{position:absolute;inset:0;z-index:1}
+.hero .container{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:end}
+.hero h1{font-family:var(--serif-ko);font-weight:300;color:var(--ivory);font-size:clamp(2.5rem,6vw,5.2rem);line-height:1.22;letter-spacing:-.045em;margin-top:30px}
+.hero h1 .gold{color:var(--gold);font-weight:400}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line > span{display:inline-block;transform:translateY(105%);animation:rise 1.3s var(--ease) forwards}
+.hero h1 .line:nth-child(2) > span{animation-delay:.15s}
+.hero h1 .line:nth-child(3) > span{animation-delay:.3s}
+@keyframes rise{to{transform:translateY(0)}}
+.hero-sub{margin-top:34px;max-width:520px;color:var(--muted);font-size:1.06rem;opacity:0;animation:fade 1.2s .7s forwards}
+.hero-cta{margin-top:48px;display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fade 1.2s .9s forwards}
+@keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero-card{border:1px solid var(--line);background:linear-gradient(160deg,rgba(22,36,58,.7),rgba(11,19,31,.6));backdrop-filter:blur(10px);padding:38px 36px;opacity:0;animation:fade 1.2s 1.1s forwards}
+.hero-card .label{font-size:.75rem;letter-spacing:.3em;color:var(--gold)}
+.hero-card .quote{font-family:var(--serif-ko);color:var(--ivory);font-size:1.12rem;line-height:1.7;margin:18px 0 26px}
+.hero-card .row{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px}
+.hero-card .row b{display:block;font-family:var(--serif-en);font-size:2.1rem;color:var(--gold);font-weight:500;line-height:1}
+.hero-card .row small{font-size:.75rem;color:var(--muted);letter-spacing:.04em}
+.scroll-ind{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:12px;font-size:.66rem;letter-spacing:.4em;color:var(--muted)}
+.scroll-ind i{width:1px;height:54px;background:linear-gradient(var(--gold),transparent);animation:drop 2.2s infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* marquee */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0;overflow:hidden;background:var(--navy-2)}
+.marquee-track{display:flex;gap:70px;width:max-content;animation:mq 40s linear infinite}
+.marquee-track span{font-family:var(--serif-en);font-size:1.5rem;letter-spacing:.2em;color:rgba(244,239,228,.4);white-space:nowrap;display:flex;align-items:center;gap:70px}
+.marquee-track span::after{content:"◆";font-size:.6rem;color:var(--gold)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.about-img{position:relative;aspect-ratio:4/5}
+.about-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) contrast(1.05)}
+.about-img::before{content:"";position:absolute;inset:-22px 22px 22px -22px;border:1px solid var(--gold);z-index:-1}
+.about-img .badge{position:absolute;right:-34px;bottom:48px;background:var(--gold);color:var(--navy);padding:26px 30px;text-align:center}
+.about-img .badge b{display:block;font-family:var(--serif-en);font-size:3rem;line-height:1;font-weight:600}
+.about-img .badge small{font-size:.76rem;font-weight:600;letter-spacing:.08em}
+.about-text p{margin-top:24px;color:var(--muted)}
+.about-sign{margin-top:44px;display:flex;align-items:center;gap:22px;padding-top:30px;border-top:1px solid var(--line)}
+.about-sign .sig{font-family:var(--serif-en);font-style:italic;font-size:2rem;color:var(--gold)}
+.about-sign small{display:block;color:var(--muted);font-size:.82rem;line-height:1.5}
+.about-sign small b{color:var(--ivory);font-weight:500;font-size:.95rem}
+
+/* stats */
+.stats{background:var(--navy-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:70px 30px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{font-family:var(--serif-en);font-size:clamp(2.8rem,4.6vw,4rem);color:var(--ivory);font-weight:400;line-height:1}
+.stat b sup{color:var(--gold);font-size:.5em;margin-left:4px}
+.stat p{margin-top:14px;color:var(--muted);font-size:.9rem;letter-spacing:.04em}
+
+/* services */
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:80px;flex-wrap:wrap}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svc{padding:54px 38px 50px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;transition:background .6s var(--ease);overflow:hidden;min-height:440px;display:flex;flex-direction:column}
+.svc::before{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--gold);transition:width .7s var(--ease)}
+.svc:hover{background:var(--navy-3)}
+.svc:hover::before{width:100%}
+.svc .num{font-family:var(--serif-en);color:var(--gold);font-size:1rem;letter-spacing:.2em}
+.svc .ico{width:54px;height:54px;margin:40px 0 30px;color:var(--gold)}
+.svc h3{font-family:var(--serif-ko);font-weight:400;color:var(--ivory);font-size:1.42rem;letter-spacing:-.02em}
+.svc .en{font-family:var(--serif-en);font-style:italic;color:var(--muted);font-size:.95rem;margin-top:4px}
+.svc p{margin-top:20px;color:var(--muted);font-size:.92rem;flex:1}
+.svc ul{list-style:none;margin-top:24px;font-size:.85rem;color:var(--text)}
+.svc li{padding:7px 0;border-top:1px dashed rgba(212,175,55,.15);display:flex;gap:10px}
+.svc li::before{content:"—";color:var(--gold)}
+
+/* approach */
+.approach{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:90px;position:relative}
+.steps::before{content:"";position:absolute;top:34px;left:34px;right:34px;height:1px;background:var(--line)}
+.step{position:relative}
+.step .dot{width:68px;height:68px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;background:var(--navy);font-family:var(--serif-en);color:var(--gold);font-size:1.35rem;position:relative;transition:all .5s var(--ease)}
+.step:hover .dot{background:var(--gold);color:var(--navy)}
+.step h4{font-family:var(--serif-ko);color:var(--ivory);font-weight:400;font-size:1.3rem;margin-top:34px}
+.step .wk{font-size:.75rem;letter-spacing:.2em;color:var(--gold);margin-top:6px}
+.step p{color:var(--muted);font-size:.92rem;margin-top:16px;padding-right:10px}
+
+/* cases */
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.case{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:default;border:1px solid var(--line)}
+.case img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.6) brightness(.55);transition:transform 1.2s var(--ease),filter .8s}
+.case:hover img{transform:scale(1.07);filter:grayscale(.1) brightness(.45)}
+.case::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(11,19,31,.95) 100%)}
+.case-body{position:absolute;inset:auto 0 0;padding:40px 36px;z-index:2}
+.case .tag{font-size:.72rem;letter-spacing:.24em;color:var(--gold);border:1px solid var(--line);padding:5px 12px;display:inline-block}
+.case h3{font-family:var(--serif-ko);color:var(--ivory);font-weight:400;font-size:1.32rem;margin-top:18px;line-height:1.5}
+.case .result{display:flex;gap:30px;margin-top:24px;padding-top:22px;border-top:1px solid var(--line);max-height:0;opacity:0;overflow:hidden;transition:all .7s var(--ease)}
+.case:hover .result{max-height:140px;opacity:1}
+.case .result b{display:block;font-family:var(--serif-en);font-size:2.2rem;color:var(--gold);font-weight:500;line-height:1}
+.case .result small{font-size:.76rem;color:var(--muted)}
+
+/* testimonial */
+.testi{text-align:center;background:var(--navy-2);overflow:hidden}
+.testi .qmark{font-family:var(--serif-en);font-size:9rem;line-height:.6;color:var(--gold);opacity:.6}
+.testi-slider{position:relative;min-height:250px;max-width:900px;margin:30px auto 0}
+.testi-item{position:absolute;inset:0;opacity:0;transform:translateY(20px);transition:all 1s var(--ease);pointer-events:none}
+.testi-item.on{opacity:1;transform:none;pointer-events:auto}
+.testi-item blockquote{font-family:var(--serif-ko);font-weight:300;color:var(--ivory);font-size:clamp(1.25rem,2.4vw,1.8rem);line-height:1.75;letter-spacing:-.02em}
+.testi-item cite{display:block;margin-top:34px;font-style:normal;color:var(--gold);font-size:.9rem;letter-spacing:.1em}
+.testi-item cite span{color:var(--muted);margin-left:10px}
+.testi-dots{display:flex;justify-content:center;gap:12px;margin-top:20px}
+.testi-dots button{width:34px;height:2px;border:0;background:rgba(244,239,228,.2);cursor:pointer;transition:background .4s}
+.testi-dots button.on{background:var(--gold)}
+
+/* partners */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.member{border:1px solid var(--line);padding:46px 40px;position:relative;transition:all .6s var(--ease);background:linear-gradient(160deg,var(--navy-2),var(--navy))}
+.member:hover{border-color:var(--gold);transform:translateY(-6px)}
+.member .mono{width:84px;height:84px;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif-en);font-size:2rem;color:var(--gold);letter-spacing:.06em}
+.member h4{font-family:var(--serif-ko);color:var(--ivory);font-weight:400;font-size:1.4rem;margin-top:30px}
+.member .role{font-size:.8rem;letter-spacing:.14em;color:var(--gold);margin-top:4px}
+.member p{color:var(--muted);font-size:.9rem;margin-top:20px}
+.member .cred{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:.8rem;color:var(--text);line-height:1.9}
+
+/* cta band */
+.band{position:relative;padding:140px 0;text-align:center;overflow:hidden}
+.band-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=2000&q=80') center/cover fixed;filter:grayscale(.5)}
+.band::after{content:"";position:absolute;inset:0;background:rgba(11,19,31,.86)}
+.band .container{position:relative;z-index:2}
+.band h2{font-family:var(--serif-ko);font-weight:300;color:var(--ivory);font-size:clamp(2rem,4.4vw,3.6rem);line-height:1.35;letter-spacing:-.04em}
+.band h2 em{font-style:normal;color:var(--gold)}
+.band p{color:var(--muted);margin:24px auto 46px;max-width:520px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:100px}
+.info-list{margin-top:50px;border-top:1px solid var(--line)}
+.info-list div{display:grid;grid-template-columns:120px 1fr;padding:22px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.info-list dt{color:var(--gold);font-size:.78rem;letter-spacing:.2em;padding-top:3px}
+.info-list dd{color:var(--ivory)}
+form.cform{display:grid;grid-template-columns:1fr 1fr;gap:34px 30px;border:1px solid var(--line);padding:56px 50px;background:var(--navy-2)}
+.field{display:flex;flex-direction:column;gap:10px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.75rem;letter-spacing:.18em;color:var(--gold)}
+.field input,.field select,.field textarea{background:transparent;border:0;border-bottom:1px solid rgba(244,239,228,.2);color:var(--ivory);font-family:var(--sans);font-size:1rem;padding:10px 0;outline:none;transition:border-color .4s;font-weight:300;border-radius:0}
+.field select{appearance:none;cursor:pointer;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23d4af37' fill='none'/%3E%3C/svg%3E") right 4px center no-repeat}
+.field select option{background:var(--navy);color:var(--ivory)}
+.field textarea{resize:none;min-height:110px}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--gold)}
+.field input::placeholder,.field textarea::placeholder{color:rgba(138,147,163,.6)}
+.agree{grid-column:1/-1;display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--muted);cursor:pointer}
+.agree input{accent-color:var(--gold);width:16px;height:16px}
+.form-foot{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.form-foot small{color:var(--muted);font-size:.8rem}
+.form-msg{grid-column:1/-1;display:none;text-align:center;padding:20px;border:1px solid var(--gold);color:var(--gold);font-size:.95rem}
+.form-msg.on{display:block}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:80px 0 40px;background:#080e18}
+.foot-top{display:flex;justify-content:space-between;gap:60px;flex-wrap:wrap;padding-bottom:60px;border-bottom:1px solid var(--line)}
+.foot-top p{color:var(--muted);font-size:.88rem;max-width:340px;margin-top:22px}
+.foot-cols{display:flex;gap:90px;flex-wrap:wrap}
+.foot-cols h5{color:var(--gold);font-size:.75rem;letter-spacing:.24em;font-weight:500;margin-bottom:20px}
+.foot-cols a{display:block;color:var(--text);font-size:.9rem;padding:5px 0;transition:color .3s}
+.foot-cols a:hover{color:var(--gold)}
+.foot-bot{display:flex;justify-content:space-between;padding-top:34px;font-size:.78rem;color:var(--muted);flex-wrap:wrap;gap:12px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+/* responsive */
+@media(max-width:1100px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:60px}
+  .steps::before{display:none}
+}
+@media(max-width:900px){
+  .menu,.nav .btn{display:none}
+  .burger{display:block;z-index:101}
+  .pad{padding:100px 0}
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:60px}
+  .about-img{max-width:480px}
+  .about-img .badge{right:-10px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .cases-grid,.team-grid{grid-template-columns:1fr}
+  .case{aspect-ratio:4/3}
+  .case .result{max-height:140px;opacity:1}
+  .band-bg{background-attachment:scroll}
+}
+@media(max-width:600px){
+  .svc-grid,.steps{grid-template-columns:1fr}
+  .svc{min-height:auto}
+  form.cform{grid-template-columns:1fr;padding:40px 26px}
+  .info-list div{grid-template-columns:90px 1fr}
+  .stat{padding:50px 16px}
+  .hero-card .row b{font-size:1.7rem}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav">
+    <a href="#top" class="logo">
+      <div class="logo-mark"><i></i></div>
+      <div class="logo-text">MERIDIAN<small>STRATEGY CONSULTING</small></div>
+    </a>
+    <nav class="menu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#cases">Cases</a>
+      <a href="#team">Partners</a>
+    </nav>
+    <a href="#contact" class="btn btn-gold">상담 신청 <span class="arr">→</span></a>
+    <button class="burger" id="burger" aria-label="메뉴"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mmenu">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#approach">Approach</a>
+  <a href="#cases">Cases</a>
+  <a href="#team">Partners</a>
+  <a href="#contact" class="btn btn-gold" style="font-family:var(--sans);font-size:.95rem">상담 신청 →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <canvas id="stars"></canvas>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Strategy &amp; Advisory Since 2009</span>
+        <h1>
+          <span class="line"><span>결정의 순간,</span></span>
+          <span class="line"><span>가장 <span class="gold">정확한 방향</span>을</span></span>
+          <span class="line"><span>제시합니다.</span></span>
+        </h1>
+        <p class="hero-sub">메리디안은 경영 전략부터 조직 설계, 디지털 전환, M&amp;A 자문까지. 데이터와 경험으로 기업의 다음 15년을 함께 설계하는 프리미엄 전략 컨설팅 파트너입니다.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-gold">무료 진단 상담 <span class="arr">→</span></a>
+          <a href="#services" class="btn btn-line">서비스 보기</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="label">OUR PROMISE</div>
+        <p class="quote">"보고서가 아닌 실행 가능한 결론을 드립니다. 성과가 증명될 때까지 곁에 있겠습니다."</p>
+        <div class="row">
+          <div><b>320+</b><small>수행 프로젝트</small></div>
+          <div><b>94%</b><small>재의뢰율</small></div>
+          <div><b>17</b><small>시니어 파트너</small></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <div class="scroll-ind">SCROLL<i></i></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>FINANCE</span><span>HEALTHCARE</span><span>MANUFACTURING</span><span>RETAIL</span><span>HOSPITALITY</span><span>TECHNOLOGY</span><span>REAL ESTATE</span><span>PUBLIC SECTOR</span>
+    <span>FINANCE</span><span>HEALTHCARE</span><span>MANUFACTURING</span><span>RETAIL</span><span>HOSPITALITY</span><span>TECHNOLOGY</span><span>REAL ESTATE</span><span>PUBLIC SECTOR</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="pad" id="about">
+  <div class="container about-grid">
+    <div class="about-img rv">
+      <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80" alt="메리디안 파트너">
+      <div class="badge"><b>15</b><small>YEARS OF<br>EXCELLENCE</small></div>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow rv">About Meridian</span>
+      <h2 class="h-sec rv d1">복잡한 문제일수록<br><em>단순하고 명확한 해답</em>으로.</h2>
+      <p class="rv d2">자오선(Meridian)은 위치와 방향을 정하는 기준선입니다. 메리디안 컨설팅은 이름처럼, 불확실한 환경 속에서 기업이 흔들리지 않는 기준을 세우도록 돕습니다.</p>
+      <p class="rv d2">맥킨지·BCG·삼일PwC 출신 시니어 파트너들이 프로젝트 첫날부터 마지막 날까지 직접 참여합니다. 주니어에게 위임하지 않는 1:1 파트너 책임제가 메리디안의 원칙입니다.</p>
+      <div class="about-sign rv d3">
+        <span class="sig">J. Han</span>
+        <small><b>한정우</b><br>Founder &amp; Managing Partner</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat rv"><b><span class="count" data-to="320">0</span><sup>+</sup></b><p>누적 프로젝트</p></div>
+    <div class="stat rv d1"><b><span class="count" data-to="94">0</span><sup>%</sup></b><p>고객 재의뢰율</p></div>
+    <div class="stat rv d2"><b><span class="count" data-to="2.8" data-dec="1">0</span><sup>x</sup></b><p>평균 ROI 개선</p></div>
+    <div class="stat rv d3"><b><span class="count" data-to="48">0</span></b><p>상장사 고객</p></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="pad" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow rv">Our Services</span>
+        <h2 class="h-sec rv d1">기업의 모든 전환점에<br><em>메리디안</em>이 있습니다.</h2>
+      </div>
+      <p class="lead rv d2">진단에서 실행까지 하나의 팀이 책임집니다. 각 영역의 전문 파트너가 기업의 상황에 맞춘 맞춤형 솔루션을 설계합니다.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <span class="num">01</span>
+        <svg class="ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1"><circle cx="27" cy="27" r="22"/><circle cx="27" cy="27" r="12"/><circle cx="27" cy="27" r="3" fill="currentColor"/><path d="M27 1v10M27 43v10M1 27h10M43 27h10"/></svg>
+        <h3>경영 전략</h3>
+        <div class="en">Corporate Strategy</div>
+        <p>시장 구조와 경쟁 환경을 정밀 분석해 중장기 성장 로드맵과 포트폴리오 전략을 수립합니다.</p>
+        <ul><li>중장기 비전·성장 전략</li><li>신사업 타당성 검토</li><li>사업 포트폴리오 재편</li></ul>
+      </article>
+      <article class="svc rv d1">
+        <span class="num">02</span>
+        <svg class="ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1"><rect x="20" y="3" width="14" height="12"/><rect x="3" y="39" width="14" height="12"/><rect x="20" y="39" width="14" height="12"/><rect x="37" y="39" width="14" height="12"/><path d="M27 15v12M10 39V27h34v12M27 27v12"/></svg>
+        <h3>조직·인사 혁신</h3>
+        <div class="en">Organization &amp; People</div>
+        <p>전략을 실행할 수 있는 조직 구조와 성과 체계를 설계하고, 리더십의 변화를 이끌어냅니다.</p>
+        <ul><li>조직 구조 재설계</li><li>성과·보상 체계 개편</li><li>리더십 코칭</li></ul>
+      </article>
+      <article class="svc rv d2">
+        <span class="num">03</span>
+        <svg class="ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 45l13-15 10 8 14-20 11 9"/><path d="M40 18h11v11"/><path d="M3 51h48"/></svg>
+        <h3>디지털 전환</h3>
+        <div class="en">Digital Transformation</div>
+        <p>데이터와 AI를 비즈니스 언어로 번역합니다. 기술 도입이 아닌 수익 구조의 변화를 목표로 합니다.</p>
+        <ul><li>DX 전략·로드맵</li><li>데이터 기반 의사결정 체계</li><li>AI 업무 혁신 PoC</li></ul>
+      </article>
+      <article class="svc rv d3">
+        <span class="num">04</span>
+        <svg class="ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1"><circle cx="19" cy="27" r="15"/><circle cx="35" cy="27" r="15"/><path d="M27 14.5v25"/></svg>
+        <h3>M&amp;A · 투자 자문</h3>
+        <div class="en">M&amp;A Advisory</div>
+        <p>인수 대상 발굴부터 실사, 가치 평가, 인수 후 통합(PMI)까지 거래의 전 과정을 자문합니다.</p>
+        <ul><li>타깃 발굴·스크리닝</li><li>재무·상업 실사</li><li>PMI 통합 관리</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="pad approach" id="approach">
+  <div class="container">
+    <span class="eyebrow rv">Our Approach</span>
+    <h2 class="h-sec rv d1">검증된 4단계 방법론,<br><em>결과로 증명합니다.</em></h2>
+    <div class="steps">
+      <div class="step rv"><div class="dot">I</div><h4>진단</h4><div class="wk">DIAGNOSE · 2~3 WEEKS</div><p>경영진 인터뷰와 데이터 분석으로 문제의 본질을 정의합니다. 증상이 아닌 원인을 찾습니다.</p></div>
+      <div class="step rv d1"><div class="dot">II</div><h4>설계</h4><div class="wk">DESIGN · 3~4 WEEKS</div><p>복수의 전략 시나리오를 도출하고 기대 효과와 리스크를 정량화해 최적안을 함께 선택합니다.</p></div>
+      <div class="step rv d2"><div class="dot">III</div><h4>실행</h4><div class="wk">EXECUTE · 8~12 WEEKS</div><p>현업 조직과 한 팀이 되어 과제를 실행합니다. 주간 단위로 진척과 성과를 공유합니다.</p></div>
+      <div class="step rv d3"><div class="dot">IV</div><h4>정착</h4><div class="wk">SUSTAIN · ONGOING</div><p>변화가 조직의 습관이 될 때까지 KPI 모니터링과 사후 관리를 6개월간 무상 제공합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="pad" id="cases">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow rv">Selected Cases</span>
+        <h2 class="h-sec rv d1">숫자로 말하는<br><em>프로젝트 성과</em></h2>
+      </div>
+      <p class="lead rv d2">고객사 보안 규정에 따라 사명은 비공개로 소개합니다. 상세 레퍼런스는 상담 시 안내해 드립니다.</p>
+    </div>
+    <div class="cases-grid">
+      <article class="case rv">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1000&q=80" alt="">
+        <div class="case-body">
+          <span class="tag">MANUFACTURING</span>
+          <h3>중견 제조사 A사<br>원가 구조 혁신 프로젝트</h3>
+          <div class="result"><div><b>-23%</b><small>운영 원가</small></div><div><b>+410억</b><small>연간 영업이익</small></div></div>
+        </div>
+      </article>
+      <article class="case rv d1">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&q=80" alt="">
+        <div class="case-body">
+          <span class="tag">HEALTHCARE</span>
+          <h3>대학병원 B의료원<br>조직 재설계 및 성과 체계 구축</h3>
+          <div class="result"><div><b>+38%</b><small>외래 환자 만족도</small></div><div><b>-31%</b><small>핵심 인력 이직률</small></div></div>
+        </div>
+      </article>
+      <article class="case rv d2">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1000&q=80" alt="">
+        <div class="case-body">
+          <span class="tag">RETAIL · M&amp;A</span>
+          <h3>유통 그룹 C사<br>온라인 플랫폼 인수 및 PMI</h3>
+          <div class="result"><div><b>3.2x</b><small>온라인 매출 성장</small></div><div><b>9개월</b><small>통합 완료</small></div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="pad testi">
+  <div class="container">
+    <div class="qmark rv">“</div>
+    <div class="testi-slider">
+      <div class="testi-item on">
+        <blockquote>컨설팅 보고서는 많이 받아봤지만, 실행 현장까지 함께 들어와 결과를 만든 곳은 메리디안이 처음이었습니다.</blockquote>
+        <cite>김OO 대표이사<span>중견 제조 A사</span></cite>
+      </div>
+      <div class="testi-item">
+        <blockquote>파트너가 처음부터 끝까지 직접 챙겨준다는 약속을 정말로 지켰습니다. 의사결정의 속도가 완전히 달라졌습니다.</blockquote>
+        <cite>이OO 원장<span>B의료원</span></cite>
+      </div>
+      <div class="testi-item">
+        <blockquote>인수 이후 통합 과정에서 생길 수 있는 리스크를 미리 짚어준 덕분에 9개월 만에 시너지를 확인할 수 있었습니다.</blockquote>
+        <cite>박OO 전략기획실장<span>유통 그룹 C사</span></cite>
+      </div>
+    </div>
+    <div class="testi-dots" id="tdots"><button class="on" aria-label="1"></button><button aria-label="2"></button><button aria-label="3"></button></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="pad" id="team">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow rv">Senior Partners</span>
+        <h2 class="h-sec rv d1">프로젝트를 이끄는<br><em>시니어 파트너</em></h2>
+      </div>
+      <p class="lead rv d2">평균 경력 18년. 각 분야 최고의 전문가가 고객사의 프로젝트를 직접 책임집니다.</p>
+    </div>
+    <div class="team-grid">
+      <div class="member rv">
+        <div class="mono">JH</div>
+        <h4>한정우</h4>
+        <div class="role">FOUNDER · MANAGING PARTNER</div>
+        <p>기업 전략과 사업 포트폴리오 재편 분야에서 20년 이상 대기업·중견기업의 성장 전략을 이끌어 왔습니다.</p>
+        <div class="cred">前 McKinsey &amp; Company 서울사무소 파트너<br>Wharton School MBA</div>
+      </div>
+      <div class="member rv d1">
+        <div class="mono">SY</div>
+        <h4>윤서연</h4>
+        <div class="role">PARTNER · ORGANIZATION</div>
+        <p>조직 설계와 인사 혁신 전문가. 의료·서비스 산업의 조직 문화 전환 프로젝트를 다수 수행했습니다.</p>
+        <div class="cred">前 BCG 프린시펄<br>서울대학교 경영학 박사</div>
+      </div>
+      <div class="member rv d2">
+        <div class="mono">MK</div>
+        <h4>강민준</h4>
+        <div class="role">PARTNER · M&amp;A ADVISORY</div>
+        <p>국내외 크로스보더 M&amp;A 40건 이상을 자문한 거래 전문가. 실사부터 PMI까지 전 과정을 리드합니다.</p>
+        <div class="cred">前 삼일PwC Deals 본부 상무<br>한국공인회계사 (KICPA)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="band">
+  <div class="band-bg"></div>
+  <div class="container">
+    <span class="eyebrow rv" style="justify-content:center">Complimentary Diagnosis</span>
+    <h2 class="rv d1" style="margin-top:22px">첫 상담은 <em>무료 경영 진단</em>으로<br>시작합니다.</h2>
+    <p class="rv d2">90분의 파트너 미팅으로 현재 상황과 핵심 과제를 정리해 드립니다. 부담 없이 문의하세요.</p>
+    <a href="#contact" class="btn btn-gold rv d3">진단 상담 예약하기 <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pad" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <span class="eyebrow rv">Contact</span>
+      <h2 class="h-sec rv d1">새로운 방향을<br><em>함께 그려보시겠습니까?</em></h2>
+      <p class="lead rv d2">문의를 남겨주시면 담당 파트너가 영업일 기준 24시간 이내에 직접 연락드립니다. 모든 상담 내용은 엄격한 비밀유지 원칙에 따라 보호됩니다.</p>
+      <dl class="info-list rv d3">
+        <div><dt>ADDRESS</dt><dd>서울특별시 중구 세종대로 136, 서울파이낸스센터 32F</dd></div>
+        <div><dt>TEL</dt><dd>02-6250-0900</dd></div>
+        <div><dt>EMAIL</dt><dd>contact@meridian-consulting.kr</dd></div>
+        <div><dt>HOURS</dt><dd>평일 09:00 – 18:00 (주말·공휴일 예약 상담)</dd></div>
+      </dl>
+    </div>
+    <form class="cform rv d1" id="cform">
+      <div class="field"><label for="f-name">성함 *</label><input id="f-name" required placeholder="홍길동"></div>
+      <div class="field"><label for="f-co">회사명 / 직책 *</label><input id="f-co" required placeholder="메리디안 / 대표"></div>
+      <div class="field"><label for="f-tel">연락처 *</label><input id="f-tel" type="tel" required placeholder="010-0000-0000"></div>
+      <div class="field"><label for="f-mail">이메일</label><input id="f-mail" type="email" placeholder="name@company.com"></div>
+      <div class="field full"><label for="f-svc">관심 분야</label>
+        <select id="f-svc"><option>경영 전략</option><option>조직·인사 혁신</option><option>디지털 전환</option><option>M&amp;A · 투자 자문</option><option>기타 / 아직 모르겠어요</option></select>
+      </div>
+      <div class="field full"><label for="f-msg">문의 내용</label><textarea id="f-msg" placeholder="현재 고민하고 계신 과제를 간단히 적어주세요."></textarea></div>
+      <label class="agree"><input type="checkbox" required> 개인정보 수집 및 이용에 동의합니다. (필수)</label>
+      <div class="form-foot">
+        <small>* 표시는 필수 입력 항목입니다.</small>
+        <button type="submit" class="btn btn-gold">상담 신청하기 <span class="arr">→</span></button>
+      </div>
+      <div class="form-msg" id="fmsg">문의가 접수되었습니다. 담당 파트너가 곧 연락드리겠습니다.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div>
+        <a href="#top" class="logo">
+          <div class="logo-mark"><i></i></div>
+          <div class="logo-text">MERIDIAN<small>STRATEGY CONSULTING</small></div>
+        </a>
+        <p>결정의 순간, 가장 정확한 방향을. 메리디안은 기업의 지속 가능한 성장을 설계하는 전략 컨설팅 파트너입니다.</p>
+      </div>
+      <div class="foot-cols">
+        <div><h5>COMPANY</h5><a href="#about">회사 소개</a><a href="#team">파트너</a><a href="#cases">프로젝트 사례</a></div>
+        <div><h5>SERVICES</h5><a href="#services">경영 전략</a><a href="#services">조직·인사 혁신</a><a href="#services">디지털 전환</a><a href="#services">M&amp;A 자문</a></div>
+        <div><h5>CONTACT</h5><a href="tel:0262500900">02-6250-0900</a><a href="#contact">상담 신청</a></div>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>메리디안컨설팅(주) · 대표 한정우 · 사업자등록번호 000-00-00000</span>
+      <span>© 2026 MERIDIAN Consulting. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// header
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+// mobile menu
+const burger=document.getElementById('burger'),mm=document.getElementById('mmenu');
+burger.onclick=()=>{burger.classList.toggle('on');mm.classList.toggle('on');document.body.style.overflow=mm.classList.contains('on')?'hidden':''};
+mm.querySelectorAll('a').forEach(a=>a.onclick=()=>{burger.classList.remove('on');mm.classList.remove('on');document.body.style.overflow=''});
+
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('in');
+  e.target.querySelectorAll('.count').forEach(runCount);
+  io.unobserve(e.target);
+}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+function runCount(el){
+  const to=parseFloat(el.dataset.to),dec=+el.dataset.dec||0,t0=performance.now(),dur=2000;
+  (function f(t){const p=Math.min((t-t0)/dur,1),v=to*(1-Math.pow(1-p,4));el.textContent=v.toFixed(dec);if(p<1)requestAnimationFrame(f)})(t0);
+}
+
+// testimonials
+const items=document.querySelectorAll('.testi-item'),dots=document.querySelectorAll('#tdots button');let ti=0,tt;
+function showT(i){items[ti].classList.remove('on');dots[ti].classList.remove('on');ti=i;items[ti].classList.add('on');dots[ti].classList.add('on')}
+function autoT(){clearInterval(tt);tt=setInterval(()=>showT((ti+1)%items.length),6000)}
+dots.forEach((d,i)=>d.onclick=()=>{showT(i);autoT()});autoT();
+
+// form
+document.getElementById('cform').addEventListener('submit',e=>{
+  e.preventDefault();document.getElementById('fmsg').classList.add('on');e.target.reset();
+});
+
+// gold constellation canvas
+(()=>{
+  const c=document.getElementById('stars'),x=c.getContext('2d');let w,h,pts=[],mouse={x:-999,y:-999};
+  const dpr=Math.min(devicePixelRatio||1,2);
+  function size(){w=c.offsetWidth;h=c.offsetHeight;c.width=w*dpr;c.height=h*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    const n=Math.min(110,Math.floor(w*h/14000));pts=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.6+.3,tw:Math.random()*Math.PI*2}))}
+  c.parentElement.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top});
+  c.parentElement.addEventListener('mouseleave',()=>{mouse.x=mouse.y=-999});
+  function draw(){
+    x.clearRect(0,0,w,h);
+    for(const p of pts){
+      p.x+=p.vx;p.y+=p.vy;p.tw+=.02;
+      if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;
+      const a=.35+Math.sin(p.tw)*.3;
+      x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle=`rgba(212,175,55,${a})`;x.fill();
+    }
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+      const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<120){x.strokeStyle=`rgba(212,175,55,${(1-d/120)*.16})`;x.lineWidth=.6;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
+    }
+    for(const p of pts){const d=Math.hypot(p.x-mouse.x,p.y-mouse.y);
+      if(d<170){x.strokeStyle=`rgba(230,204,122,${(1-d/170)*.5})`;x.lineWidth=.7;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(mouse.x,mouse.y);x.stroke()}}
+    requestAnimationFrame(draw);
+  }
+  addEventListener('resize',size);size();draw();
+})();
+</script>
+</body>
+</html>
