@@ -343,6 +343,98 @@ body.loading{overflow:hidden}
   .loader{display:none}
 }
 
+
+/* ===== contact demo ===== */
+.demo-bar{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;background:rgba(216,232,108,.1);border:1px dashed rgba(216,232,108,.45);color:var(--lime);font-size:.85rem;line-height:1.5}
+.demo-bar b{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;background:var(--lime);color:var(--ink);padding:3px 8px;border-radius:999px;flex:0 0 auto}
+.err{grid-column:1/-1;color:#f2a58e;font-size:.82rem;display:none}
+.err.on{display:block}
+.in.bad input{border-color:#e07a5f}
+.admin-link{margin-top:34px;display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;border:1px solid rgba(241,237,228,.25);font-size:.88rem;cursor:pointer;background:none;color:var(--paper);font-family:var(--sans);transition:all .3s}
+.admin-link:hover{background:var(--paper);color:var(--ink)}
+.admin-link i{width:8px;height:8px;border-radius:50%;background:var(--lime);font-style:normal}
+.admin-link .cnt-b{font-family:var(--mono);font-size:.72rem;opacity:.7}
+/* modal */
+.md{position:fixed;inset:0;z-index:1200;display:grid;place-items:center;padding:20px;background:rgba(10,10,10,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .4s}
+.md.on{opacity:1;pointer-events:auto}
+.md-box{width:min(620px,100%);max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);color:var(--ink);border-radius:24px;padding:36px 34px 30px;transform:translateY(24px) scale(.98);transition:transform .6s var(--ease);position:relative}
+.md.on .md-box{transform:none}
+.md-x{position:absolute;right:18px;top:16px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:none;cursor:pointer;font-size:1rem}
+.md-x:hover{background:var(--ink);color:var(--paper)}
+.md h3{font-size:1.9rem;font-weight:680;letter-spacing:-.05em;line-height:1.15;margin-top:10px}
+.md .sub{color:var(--ink-2);margin-top:8px;font-size:.95rem}
+.rcpt{display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding:16px 18px;border-radius:14px;background:var(--ink);color:var(--paper)}
+.rcpt b{font-family:var(--mono);font-size:1.05rem;color:var(--lime);letter-spacing:.04em}
+.tl{list-style:none;margin-top:24px;border-left:1px solid var(--line);padding-left:22px;display:flex;flex-direction:column;gap:18px}
+.tl li{position:relative;color:var(--mute);transition:color .4s}
+.tl li::before{content:"";position:absolute;left:-28px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:1px solid var(--mute);transition:all .4s}
+.tl li.ok{color:var(--ink)}
+.tl li.ok::before{background:var(--green);border-color:var(--green)}
+.tl li.ing::before{background:var(--lime);border-color:var(--ink);animation:blink 1s infinite}
+.tl li b{display:block;font-weight:620;font-size:1rem}
+.tl li small{font-size:.86rem}
+.pcard{display:flex;gap:14px;align-items:center;margin-top:10px;padding:12px;border-radius:14px;background:var(--paper-2)}
+.pcard img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:50% 12%}
+.pcard b{font-size:1rem;color:var(--ink)}
+.pcard span{display:block;font-size:.8rem;color:var(--ink-2)}
+.slots-h{margin-top:26px;display:flex;justify-content:space-between;align-items:baseline}
+.slots-h b{font-size:1.05rem;font-weight:650}
+.days{display:flex;gap:8px;margin-top:12px;overflow-x:auto;padding-bottom:4px}
+.day{flex:0 0 auto;min-width:74px;padding:10px 8px;border-radius:12px;border:1px solid var(--line);background:none;cursor:pointer;text-align:center;font-family:var(--sans);color:var(--ink);transition:all .25s}
+.day small{display:block;font-family:var(--mono);font-size:.66rem;color:var(--mute)}
+.day b{font-size:1.15rem;font-weight:650}
+.day.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.day.on small{color:rgba(241,237,228,.6)}
+.times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.tm{padding:11px 0;border-radius:10px;border:1px solid var(--line);background:none;cursor:pointer;font:500 .9rem var(--mono);color:var(--ink);transition:all .25s}
+.tm:hover:not(:disabled){border-color:var(--ink)}
+.tm.on{background:var(--lime);border-color:var(--lime)}
+.tm:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.md-act{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.md-act .pill{height:50px}
+.md-act .pill:disabled{opacity:.35;pointer-events:none}
+.mode{display:flex;gap:8px;margin-top:12px}
+.mode label{flex:1;padding:10px;border-radius:10px;border:1px solid var(--line);text-align:center;cursor:pointer;font-size:.88rem}
+.mode input{display:none}
+.mode input:checked + span{font-weight:650}
+.mode label:has(input:checked){background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.conf{margin-top:20px;padding:20px;border-radius:16px;border:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:.92rem}
+.conf dt{color:var(--mute);font-family:var(--mono);font-size:.72rem;text-transform:uppercase;padding-top:3px}
+.conf dd{font-weight:550}
+.check{width:64px;height:64px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:var(--lime);font-size:1.8rem;animation:pop .6s var(--ease)}
+@keyframes pop{from{transform:scale(.4);opacity:0}}
+/* admin drawer */
+.adm{position:fixed;inset:0;z-index:1250;pointer-events:none}
+.adm.on{pointer-events:auto}
+.adm-bg{position:absolute;inset:0;background:rgba(10,10,10,.5);opacity:0;transition:opacity .4s}
+.adm.on .adm-bg{opacity:1}
+.adm-p{position:absolute;right:0;top:0;bottom:0;width:min(860px,100%);background:#fbfaf6;color:var(--ink);transform:translateX(100%);transition:transform .7s var(--ease);display:flex;flex-direction:column}
+.adm.on .adm-p{transform:none}
+.adm-h{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;border-bottom:1px solid var(--line)}
+.adm-h h4{font-size:1.25rem;font-weight:680;letter-spacing:-.03em}
+.adm-h h4 small{font-family:var(--mono);font-size:.68rem;background:var(--lime);padding:3px 8px;border-radius:999px;margin-left:8px;vertical-align:middle}
+.adm-kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:18px 28px}
+.adm-kpi div{padding:14px;border-radius:12px;background:var(--paper)}
+.adm-kpi small{font-family:var(--mono);font-size:.66rem;color:var(--mute);text-transform:uppercase}
+.adm-kpi b{display:block;font-size:1.6rem;font-weight:500;letter-spacing:-.04em}
+.adm-tools{display:flex;gap:8px;padding:0 28px 14px;flex-wrap:wrap}
+.adm-tools input{flex:1;min-width:180px;padding:10px 14px;border-radius:10px;border:1px solid var(--line);font:400 .9rem var(--sans);background:#fff;outline:none}
+.adm-tools select,.adm-tools button{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:#fff;font:500 .85rem var(--sans);cursor:pointer}
+.adm-list{flex:1;overflow:auto;padding:0 28px 28px}
+.row{display:grid;grid-template-columns:1.1fr 1.2fr 1fr 1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+.row.hd-row{font-family:var(--mono);font-size:.66rem;color:var(--mute);text-transform:uppercase;position:sticky;top:0;background:#fbfaf6;z-index:1}
+.row .nm b{display:block;font-size:.95rem}
+.row .nm span,.row .mt{color:var(--ink-2);font-size:.8rem}
+.row .id{font-family:var(--mono);font-size:.74rem;color:var(--mute)}
+.row select{padding:7px 10px;border-radius:999px;border:1px solid var(--line);font:600 .78rem var(--sans);cursor:pointer;background:#fff}
+.row select.s0{background:#fff3c4}.row select.s1{background:#e3ecff}.row select.s2{background:#dff3e4}.row select.s3{background:#eee}
+.row .del{border:0;background:none;cursor:pointer;color:var(--mute);font-size:1rem}
+.row .del:hover{color:#c0392b}
+.row.new{animation:hl 2s}
+@keyframes hl{from{background:rgba(216,232,108,.6)}}
+.empty{padding:60px 0;text-align:center;color:var(--mute)}
+@media(max-width:700px){.times{grid-template-columns:repeat(3,1fr)}.adm-kpi{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr auto;}.row .mt,.row .id-c{display:none}.row.hd-row{display:none}.md-box{padding:30px 22px 24px}}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1.2s var(--ease)}
 .rv.in{opacity:1;transform:none}
@@ -669,8 +761,10 @@ body.loading{overflow:hidden}
           <div><dt class="mono">Office</dt><dd>서울 중구 세종대로 136, 32F</dd></div>
           <div><dt class="mono">Response</dt><dd>영업일 기준 24시간 이내 파트너 회신</dd></div>
         </dl>
+        <button class="admin-link" id="admOpen" type="button"><i></i>관리자 화면 미리보기 <span class="cnt-b" id="admCnt"></span></button>
       </div>
-      <form id="cform">
+      <form id="cform" novalidate>
+        <div class="demo-bar"><b>LIVE DEMO</b><span>직접 체험해 보세요. 신청 → 파트너 배정 → 미팅 예약까지 실제처럼 진행됩니다. (입력 정보는 이 브라우저에만 저장되며 외부로 전송되지 않습니다)</span></div>
         <div class="in"><input id="n" placeholder=" " required><label for="n">성함</label></div>
         <div class="in"><input id="c" placeholder=" " required><label for="c">회사 / 직책</label></div>
         <div class="in"><input id="t" type="tel" placeholder=" " required><label for="t">연락처</label></div>
@@ -684,12 +778,21 @@ body.loading{overflow:hidden}
           <input type="checkbox" id="k5"><label for="k5">아직 모르겠어요</label>
         </div>
         <div class="in full"><textarea id="m" placeholder=" "></textarea><label for="m">고민하고 계신 과제를 간단히 적어주세요</label></div>
+        <div class="err" id="ferr"></div>
         <button class="pill mag" type="submit">상담 신청하기 <span class="ar">→</span></button>
         <div class="done" id="done">접수되었습니다. 담당 파트너가 24시간 이내에 연락드리겠습니다.</div>
       </form>
     </div>
   </div>
 </section>
+
+<div class="md" id="md" role="dialog" aria-modal="true"><div class="md-box" data-lenis-prevent><button class="md-x" id="mdX" aria-label="닫기">✕</button><div id="mdBody"></div></div></div>
+<div class="adm" id="adm"><div class="adm-bg" id="admBg"></div><aside class="adm-p">
+  <div class="adm-h"><h4>Meridian CRM <small>DEMO</small></h4><button class="md-x" style="position:static" id="admX" aria-label="닫기">✕</button></div>
+  <div class="adm-kpi" id="admKpi"></div>
+  <div class="adm-tools"><input id="admQ" placeholder="이름 · 회사 · 접수번호 검색"><select id="admF"><option value="">전체 상태</option><option value="0">신규</option><option value="1">파트너 배정</option><option value="2">미팅 확정</option><option value="3">완료</option></select><button id="admReset" type="button">데모 데이터 초기화</button></div>
+  <div class="adm-list" id="admList" data-lenis-prevent></div>
+</aside></div>
 
 <footer>
   <div class="wrap">
@@ -743,7 +846,7 @@ addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
 $$('.fq button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
 
 // form
-$('#cform').onsubmit=e=>{e.preventDefault();const b=e.target.querySelector('button');const t=b.innerHTML;b.classList.add('busy');b.innerHTML='전송 중…';setTimeout(()=>{b.classList.remove('busy');b.innerHTML=t;$('#done').classList.add('on');e.target.reset()},900)};
+/* contact handled by demo module */
 
 // process steps
 const steps=$$('.step'),pn=$('#procNum'),pb=$('#procBar');
@@ -778,7 +881,7 @@ addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onS
 
 // ===== upgrade =====
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-let lenis=null;
+var lenis=null;
 if(window.Lenis&&!reduce){lenis=new Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});
   (function raf(t){lenis.raf(t);requestAnimationFrame(raf)})(performance.now());lenis.stop();}
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');const el=id==='#top'?document.body:document.querySelector(id);if(!el)return;e.preventDefault();if(lenis)lenis.scrollTo(id==='#top'?0:el,{offset:-10,duration:1.4});else el.scrollIntoView({behavior:'smooth'})}));
@@ -811,6 +914,135 @@ $$('.mag').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingC
 const prog=$('#prog'),navLinks=$$('.hd nav a'),navSecs=navLinks.map(a=>document.querySelector(a.getAttribute('href')));
 addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;prog.style.transform='scaleX('+(scrollY/m)+')';
   let ai=-1;navSecs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<innerHeight*.4)ai=i});navLinks.forEach((a,i)=>a.classList.toggle('act',i===ai&&navSecs[i].getBoundingClientRect().bottom>80))},{passive:true});
+
+// ===== contact demo =====
+(function(){
+const KEY='meridian-crm';
+const ST=['신규','파트너 배정','미팅 확정','완료'];
+const PARTNERS={
+ '경영 전략':{n:'한정우',r:'Founder · Managing Partner',img:document.querySelector('.pt[data-p="0"] .av').src},
+ '조직 · 인사':{n:'윤서연',r:'Partner · Organization',img:document.querySelector('.pt[data-p="1"] .av').src},
+ 'M&A · 투자':{n:'강민준',r:'Partner · M&A',img:document.querySelector('.pt[data-p="2"] .av').src},
+ '디지털 전환':{n:'이도현',r:'Partner · Digital',img:document.querySelector('.pt[data-p="3"] .av').src}
+};
+const load=()=>{try{return JSON.parse(localStorage.getItem(KEY))||null}catch(e){return null}};
+const save=d=>{localStorage.setItem(KEY,JSON.stringify(d));renderAdm();};
+let db=load();
+if(!db){const d=new Date();const ago=n=>new Date(d-n*36e5).toISOString();
+ db=[{id:'MRD-'+ymd(new Date(d-26*36e5))+'-0417',name:'박지훈',co:'대원물산 / 전략기획실장',tel:'010-2481-7720',mail:'',areas:['경영 전략'],msg:'신사업 진출 타당성 검토가 필요합니다.',st:2,at:ago(26),meet:'미팅 확정 · 화상',partner:'한정우'},
+     {id:'MRD-'+ymd(new Date(d-5*36e5))+'-0932',name:'최은서',co:'서린메디컬 / 인사팀장',tel:'010-5530-1184',mail:'',areas:['조직 · 인사'],msg:'병원 조직 개편과 평가제도 개선 상담 원합니다.',st:1,at:ago(5),meet:'',partner:'윤서연'}];
+ localStorage.setItem(KEY,JSON.stringify(db));}
+function ymd(d){return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')}
+const md=$('#md'),body=$('#mdBody');
+const openMd=html=>{body.innerHTML=html;md.classList.add('on');if(window.lenis)lenis.stop();document.body.style.overflow='hidden'};
+const closeMd=()=>{md.classList.remove('on');if(window.lenis)lenis.start();document.body.style.overflow=''};
+$('#mdX').onclick=closeMd;md.addEventListener('click',e=>{if(e.target===md)closeMd()});
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeMd();closeAdm()}});
+
+// phone formatting
+const tel=$('#t');tel.setAttribute('inputmode','numeric');tel.setAttribute('maxlength','13');
+tel.addEventListener('input',()=>{let v=tel.value.replace(/\D/g,'').slice(0,11);tel.value=v.length<4?v:v.length<8?v.slice(0,3)+'-'+v.slice(3):v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7)});
+
+const form=$('#cform'),ferr=$('#ferr');
+form.addEventListener('submit',e=>{
+ e.preventDefault();
+ const f={name:$('#n').value.trim(),co:$('#c').value.trim(),tel:$('#t').value.trim(),mail:$('#e').value.trim(),msg:$('#m').value.trim()};
+ const areas=[...form.querySelectorAll('.chips input:checked')].map(i=>i.nextElementSibling.textContent.trim());
+ const errs=[];$$('#cform .in').forEach(x=>x.classList.remove('bad'));
+ if(f.name.length<2){errs.push('성함');$('#n').parentElement.classList.add('bad')}
+ if(!f.co){errs.push('회사 / 직책');$('#c').parentElement.classList.add('bad')}
+ if(!/^01[016789]-\d{3,4}-\d{4}$/.test(f.tel)){errs.push('연락처(010-0000-0000)');$('#t').parentElement.classList.add('bad')}
+ if(f.mail&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.mail)){errs.push('이메일 형식');$('#e').parentElement.classList.add('bad')}
+ if(errs.length){ferr.textContent='확인해 주세요: '+errs.join(', ');ferr.classList.add('on');return}
+ ferr.classList.remove('on');
+ const b=form.querySelector('button[type=submit]'),t=b.innerHTML;b.classList.add('busy');b.innerHTML='접수 중…';
+ setTimeout(()=>{b.classList.remove('busy');b.innerHTML=t;
+  const now=new Date();const id='MRD-'+ymd(now)+'-'+String(Math.floor(1000+Math.random()*9000));
+  const area=areas.find(a=>PARTNERS[a])||'경영 전략';const p=PARTNERS[area];
+  const rec={id,...f,areas,st:0,at:now.toISOString(),meet:'',partner:p.n};
+  db.unshift(rec);save(db);form.reset();
+  step1(rec,p);
+ },900);
+});
+
+function step1(rec,p){
+ openMd(`<span class="mono" style="color:var(--green)">Step 1 / 3 · 접수 완료</span>
+ <h3>${rec.name}님, 상담 신청이<br>접수되었습니다.</h3>
+ <p class="sub">아래 접수번호로 진행 상황을 확인할 수 있습니다.</p>
+ <div class="rcpt"><span class="mono" style="opacity:.6">접수번호</span><b>${rec.id}</b></div>
+ <ul class="tl" id="tl">
+  <li class="ok"><b>신청서 접수</b><small>${new Date(rec.at).toLocaleString('ko-KR',{month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'})}</small></li>
+  <li class="ing" id="tl2"><b>담당 파트너 배정 중…</b><small>관심 분야와 과제 내용을 분석하고 있습니다</small></li>
+  <li id="tl3"><b>무료 진단 미팅 예약</b><small>배정 후 원하는 시간을 선택합니다</small></li>
+ </ul>
+ <div class="md-act"><button class="pill solid" id="goSlot" disabled>미팅 시간 선택하기 <span class="ar">→</span></button></div>`);
+ setTimeout(()=>{const l2=$('#tl2');if(!l2)return;l2.className='ok';
+  l2.innerHTML=`<b>담당 파트너 배정 완료</b><div class="pcard"><img src="${p.img}" alt=""><div><b>${p.n} 파트너</b><span>${p.r}</span></div></div>`;
+  $('#tl3').className='ing';
+  rec.st=1;save(db);
+  const g=$('#goSlot');g.disabled=false;g.onclick=()=>step2(rec,p);
+ },2200);
+}
+
+function step2(rec,p){
+ const days=[];let d=new Date();d.setHours(0,0,0,0);
+ while(days.length<6){d=new Date(d.getTime()+864e5);if(d.getDay()!==0&&d.getDay()!==6)days.push(new Date(d))}
+ const TIMES=['10:00','11:30','14:00','15:30','17:00'];
+ const taken=(dd,i)=>((dd.getDate()*7+i*3)%5)===0;
+ openMd(`<span class="mono" style="color:var(--green)">Step 2 / 3 · 미팅 예약</span>
+ <h3>${p.n} 파트너와의<br>90분 무료 진단</h3>
+ <p class="sub">편하신 날짜와 시간을 선택해 주세요. 회색 시간은 이미 예약되었습니다.</p>
+ <div class="slots-h"><b>날짜</b><span class="mono" style="color:var(--mute)">${days[0].getMonth()+1}월</span></div>
+ <div class="days" id="days">${days.map((x,i)=>`<button class="day${i===0?' on':''}" data-i="${i}"><small>${'일월화수목금토'[x.getDay()]}</small><b>${x.getDate()}</b></button>`).join('')}</div>
+ <div class="slots-h"><b>시간</b></div>
+ <div class="times" id="times"></div>
+ <div class="slots-h"><b>미팅 방식</b></div>
+ <div class="mode"><label><input type="radio" name="mode" value="대면 · 세종대로 오피스" checked><span>대면 미팅</span></label><label><input type="radio" name="mode" value="화상 · Zoom"><span>화상 미팅</span></label></div>
+ <div class="md-act"><button class="pill solid" id="cfm" disabled>예약 확정 <span class="ar">→</span></button><button class="pill" id="later">나중에 정할게요</button></div>`);
+ let di=0,ti=null;
+ const drawT=()=>{$('#times').innerHTML=TIMES.map((t,i)=>`<button class="tm" data-t="${i}" ${taken(days[di],i)?'disabled':''}>${t}</button>`).join('');ti=null;$('#cfm').disabled=true;
+  $$('#times .tm').forEach(b=>b.onclick=()=>{$$('#times .tm').forEach(x=>x.classList.remove('on'));b.classList.add('on');ti=+b.dataset.t;$('#cfm').disabled=false})};
+ drawT();
+ $$('#days .day').forEach(b=>b.onclick=()=>{$$('#days .day').forEach(x=>x.classList.remove('on'));b.classList.add('on');di=+b.dataset.i;drawT()});
+ $('#later').onclick=()=>{closeMd()};
+ $('#cfm').onclick=()=>{const mode=document.querySelector('input[name=mode]:checked').value;const day=days[di];const [hh,mm]=TIMES[ti].split(':');const start=new Date(day);start.setHours(+hh,+mm);
+  rec.st=2;rec.meet=`${day.getMonth()+1}/${day.getDate()}(${'일월화수목금토'[day.getDay()]}) ${TIMES[ti]} · ${mode.split(' · ')[0]}`;save(db);step3(rec,p,start,mode)};
+}
+
+function step3(rec,p,start,mode){
+ const end=new Date(start.getTime()+90*6e4);
+ const fmt=d=>d.toLocaleString('ko-KR',{month:'long',day:'numeric',weekday:'short',hour:'2-digit',minute:'2-digit'});
+ openMd(`<div class="check">✓</div>
+ <h3 style="margin-top:18px">미팅이 확정되었습니다.</h3>
+ <p class="sub">확정 안내가 ${rec.tel}로 발송됩니다. (데모)</p>
+ <dl class="conf"><dt>접수번호</dt><dd>${rec.id}</dd><dt>일시</dt><dd>${fmt(start)} – ${end.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'})}</dd><dt>담당</dt><dd>${p.n} 파트너</dd><dt>방식</dt><dd>${mode}</dd><dt>준비물</dt><dd>최근 3개년 주요 실적 자료 (선택)</dd></dl>
+ <div class="md-act"><button class="pill solid" id="ics">캘린더에 추가 (.ics) <span class="ar">↓</span></button><button class="pill" id="seeAdm">관리자 화면에서 확인</button></div>`);
+ $('#ics').onclick=()=>{const z=d=>d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Meridian//Demo//KO','BEGIN:VEVENT','UID:'+rec.id+'@meridian','DTSTAMP:'+z(new Date()),'DTSTART:'+z(start),'DTEND:'+z(end),'SUMMARY:메리디안 무료 경영 진단 ('+p.n+' 파트너)','LOCATION:'+(mode.startsWith('대면')?'서울 중구 세종대로 136, 32F':'Zoom 화상 미팅'),'DESCRIPTION:접수번호 '+rec.id,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='meridian-meeting.ics';a.click()};
+ $('#seeAdm').onclick=()=>{closeMd();openAdm(rec.id)};
+}
+
+// admin drawer
+const adm=$('#adm');
+function openAdm(hid){renderAdm(hid);adm.classList.add('on');if(window.lenis)lenis.stop();document.body.style.overflow='hidden'}
+function closeAdm(){if(!adm.classList.contains('on'))return;adm.classList.remove('on');if(window.lenis)lenis.start();document.body.style.overflow=''}
+$('#admOpen').onclick=()=>openAdm();$('#admX').onclick=closeAdm;$('#admBg').onclick=closeAdm;
+$('#admQ').oninput=()=>renderAdm();$('#admF').onchange=()=>renderAdm();
+$('#admReset').onclick=()=>{if(confirm('데모 데이터를 초기화할까요?')){localStorage.removeItem(KEY);location.reload()}};
+function renderAdm(hid){
+ $('#admCnt').textContent=db.length?'· '+db.length+'건':'';
+ const c=[0,1,2,3].map(s=>db.filter(x=>x.st===s).length);
+ $('#admKpi').innerHTML=`<div><small>전체 문의</small><b>${db.length}</b></div><div><small>신규</small><b>${c[0]}</b></div><div><small>미팅 확정</small><b>${c[2]}</b></div><div><small>전환율</small><b>${db.length?Math.round((c[2]+c[3])/db.length*100):0}%</b></div>`;
+ const q=$('#admQ').value.trim(),fs=$('#admF').value;
+ const L=db.filter(x=>(!q||(x.name+x.co+x.id).includes(q))&&(fs===''||x.st==fs));
+ $('#admList').innerHTML='<div class="row hd-row"><span>고객</span><span class="id-c">접수번호 · 일시</span><span>분야 · 담당</span><span>미팅</span><span>상태</span></div>'+(L.length?L.map(x=>`<div class="row${x.id===hid?' new':''}" data-id="${x.id}"><div class="nm"><b>${x.name}</b><span>${x.co}</span></div><div class="id-c"><div class="id">${x.id}</div><div class="mt">${new Date(x.at).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}</div></div><div class="mt">${(x.areas.length?x.areas.join(', '):'미정')}<br>${x.partner} 파트너</div><div class="mt">${x.meet||'—'}</div><div style="display:flex;gap:6px;align-items:center"><select class="s${x.st}">${ST.map((s,i)=>`<option value="${i}" ${i===x.st?'selected':''}>${s}</option>`).join('')}</select><button class="del" title="삭제">✕</button></div></div>`).join(''):'<div class="empty">조건에 맞는 문의가 없습니다.</div>');
+ $$('#admList .row[data-id]').forEach(r=>{const id=r.dataset.id;
+  r.querySelector('select').onchange=e=>{const x=db.find(y=>y.id===id);x.st=+e.target.value;save(db)};
+  r.querySelector('.del').onclick=()=>{db=db.filter(y=>y.id!==id);save(db)};});
+}
+renderAdm();
+})();
 </script>
 </body>
 </html>
