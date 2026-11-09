@@ -63,6 +63,14 @@ header.green.solid{background:rgba(29,58,44,.75)}
 .hero{padding-top:150px}
 .hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-bottom:28px;border-bottom:1px solid var(--line);color:var(--ink-2)}
 .hero-meta b{display:block;color:var(--ink);font-weight:500;font-family:var(--sans);text-transform:none;font-size:.9rem;letter-spacing:-.01em;margin-top:6px}
+.hero-stage{position:relative}
+.hero-film{position:absolute;right:0;top:5vh;bottom:0;width:31%;border-radius:20px;overflow:hidden;background:var(--paper-2);opacity:0;animation:fi 1.4s .5s forwards}
+.hero-film video{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05)}
+.hero-film::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,17,17,.55));pointer-events:none}
+.hero-film .fcap{position:absolute;left:20px;right:20px;bottom:18px;z-index:2;color:var(--paper);display:flex;justify-content:space-between;align-items:center}
+.hero-film .rec{display:inline-flex;align-items:center;gap:8px}
+.hero-film .rec::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.2}}
 .hero h1{font-size:clamp(3.4rem,11.6vw,13.5rem);font-weight:680;letter-spacing:-.065em;line-height:.92;margin-top:5vh}
 .hero h1 .r{display:block;overflow:hidden;padding-bottom:.04em}
 .hero h1 .r span{display:inline-block;transform:translateY(110%);animation:up 1.4s var(--ease) forwards}
@@ -140,17 +148,18 @@ header.green.solid{background:rgba(29,58,44,.75)}
 
 /* process (sticky split) */
 .process{padding:20vh 0}
-.proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;margin-top:6vh}
+.proc-grid{display:grid;grid-template-columns:.55fr 1.45fr;gap:4vw;margin-top:6vh}
 .proc-left{position:sticky;top:120px;height:fit-content}
-.proc-left .big{font-size:clamp(7rem,18vw,20rem);font-weight:200;letter-spacing:-.08em;line-height:.8;color:var(--green)}
+.proc-left .big{font-size:clamp(6rem,14vw,16rem);font-weight:200;letter-spacing:-.08em;line-height:.8;color:var(--green)}
 .proc-left .big span{display:inline-block;transition:transform .7s var(--ease),opacity .4s}
 .proc-left p{margin-top:30px;max-width:380px;color:var(--ink-2)}
 .proc-bar{margin-top:30px;height:2px;background:var(--line);max-width:380px;position:relative}
 .proc-bar i{position:absolute;inset:0 auto 0 0;background:var(--ink);width:25%;transition:width .7s var(--ease)}
-.step{min-height:62vh;display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--line);padding:40px 0;opacity:.25;transition:opacity .6s}
+.step{min-height:62vh;display:grid;grid-template-columns:1fr 1fr;gap:3.2vw;align-items:center;border-top:1px solid var(--line);padding:40px 0;opacity:.25;transition:opacity .6s}
 .step.on{opacity:1}
 .step .mono{color:var(--mute)}
-.step-ph{width:100%;max-width:560px;aspect-ratio:16/10;border-radius:16px;overflow:hidden;margin-bottom:30px}
+.step-ph{width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden}
+.step-tx{grid-column:2}
 .step-ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.2s var(--ease)}
 .step.on .step-ph img{transform:scale(1)}
 .step h3{font-size:clamp(2rem,4vw,3.8rem);font-weight:620;letter-spacing:-.055em;margin:14px 0 18px;line-height:1.05}
@@ -257,6 +266,7 @@ footer{background:var(--ink);color:var(--paper);overflow:hidden}
   .menu-btn{display:block}
   .hero-meta{grid-template-columns:1fr 1fr;row-gap:22px}
   .hero h1 .ind{padding-left:8vw}
+  .hero-film{position:relative;top:0;width:100%;aspect-ratio:4/3;margin-top:5vh}
   .hero-foot{grid-template-columns:1fr}
   .hero-foot .act{justify-content:flex-start;flex-wrap:wrap}
   .sh,.faq-grid,.proc-grid,.c-grid{grid-template-columns:1fr}
@@ -270,7 +280,8 @@ footer{background:var(--ink);color:var(--paper);overflow:hidden}
   .num:nth-child(3){padding-left:0}
   .num:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .proc-left{position:relative;top:0}
-  .step{min-height:auto;opacity:1}
+  .step{min-height:auto;opacity:1;grid-template-columns:1fr;gap:24px}
+  .step-tx{grid-column:1}
   .cases-h{height:auto}
   .cases-stick{position:relative;height:auto;padding:14vh 0}
   .track{flex-direction:column;transform:none!important;padding-right:clamp(20px,3.2vw,56px)}
@@ -331,11 +342,17 @@ footer{background:var(--ink);color:var(--paper);overflow:hidden}
     <div>(Practice)<b>Digital · M&amp;A</b></div>
     <div>(Status)<b>2027 상반기 프로젝트 예약 중</b></div>
   </div>
+  <div class="hero-stage">
   <h1>
     <span class="r"><span>다음 결정을</span></span>
     <span class="r ind"><span><span class="thin">함께</span> 설계</span></span>
     <span class="r"><span>합니다<span class="dot">.</span></span></span>
   </h1>
+  <div class="hero-film">
+    <video autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg"><source src="hero.mp4" type="video/mp4"></video>
+    <div class="fcap mono"><span class="rec">Strategy Session</span><span>Seoul</span></div>
+  </div>
+  </div>
   <div class="hero-foot">
     <p>메리디안은 복잡한 경영 과제를 명확한 실행 계획으로 바꾸는 독립 전략 컨설팅 펌입니다. 보고서가 아니라 결과를 납품합니다.</p>
     <div class="act">
@@ -428,10 +445,10 @@ footer{background:var(--ink);color:var(--paper);overflow:hidden}
       <div class="proc-bar"><i id="procBar"></i></div>
     </div>
     <div class="proc-right">
-      <div class="step" data-i="01"><div class="step-ph"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="데이터 진단"></div><span class="mono">Week 01 — 03</span><h3>진단</h3><p>경영진 인터뷰와 데이터 분석으로 문제의 본질을 정의합니다. 증상이 아니라 원인을 찾는 단계입니다.</p><ul><li>경영진 인터뷰</li><li>데이터 진단</li><li>이슈 트리</li></ul></div>
-      <div class="step" data-i="02"><div class="step-ph"><img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1200&q=80" alt="전략 설계"></div><span class="mono">Week 04 — 07</span><h3>설계</h3><p>복수의 시나리오를 만들고 기대 효과와 리스크를 정량화합니다. 경영진과 함께 최적안을 선택합니다.</p><ul><li>시나리오 플래닝</li><li>재무 임팩트 모델</li><li>의사결정 워크숍</li></ul></div>
-      <div class="step" data-i="03"><div class="step-ph"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80" alt="현장 실행"></div><span class="mono">Week 08 — 16</span><h3>실행</h3><p>현업 조직과 한 팀이 되어 과제를 직접 실행합니다. PMO를 운영하며 주간 단위로 성과를 공유합니다.</p><ul><li>PMO 운영</li><li>Quick-win 과제</li><li>주간 리포트</li></ul></div>
-      <div class="step" data-i="04"><span class="mono">+ 6 Months</span><h3>정착</h3><p>변화가 조직의 습관이 될 때까지 KPI를 모니터링합니다. 사후 관리 6개월은 무상으로 제공합니다.</p><ul><li>KPI 대시보드</li><li>분기 리뷰</li><li>무상 사후관리</li></ul></div>
+      <div class="step" data-i="01"><div class="step-ph"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="데이터 진단"></div><div class="step-tx"><span class="mono">Week 01 — 03</span><h3>진단</h3><p>경영진 인터뷰와 데이터 분석으로 문제의 본질을 정의합니다. 증상이 아니라 원인을 찾는 단계입니다.</p><ul><li>경영진 인터뷰</li><li>데이터 진단</li><li>이슈 트리</li></ul></div></div>
+      <div class="step" data-i="02"><div class="step-ph"><img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1200&q=80" alt="전략 설계"></div><div class="step-tx"><span class="mono">Week 04 — 07</span><h3>설계</h3><p>복수의 시나리오를 만들고 기대 효과와 리스크를 정량화합니다. 경영진과 함께 최적안을 선택합니다.</p><ul><li>시나리오 플래닝</li><li>재무 임팩트 모델</li><li>의사결정 워크숍</li></ul></div></div>
+      <div class="step" data-i="03"><div class="step-ph"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80" alt="현장 실행"></div><div class="step-tx"><span class="mono">Week 08 — 16</span><h3>실행</h3><p>현업 조직과 한 팀이 되어 과제를 직접 실행합니다. PMO를 운영하며 주간 단위로 성과를 공유합니다.</p><ul><li>PMO 운영</li><li>Quick-win 과제</li><li>주간 리포트</li></ul></div></div>
+      <div class="step" data-i="04"><div class="step-tx"><span class="mono">+ 6 Months</span><h3>정착</h3><p>변화가 조직의 습관이 될 때까지 KPI를 모니터링합니다. 사후 관리 6개월은 무상으로 제공합니다.</p><ul><li>KPI 대시보드</li><li>분기 리뷰</li><li>무상 사후관리</li></ul></div></div>
     </div>
   </div>
 </section>
