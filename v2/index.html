@@ -260,7 +260,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .in{position:relative}
 .in.full{grid-column:1/-1}
 .in input,.in textarea{width:100%;background:rgba(241,237,228,.05);border:1px solid rgba(241,237,228,.14);border-radius:14px;padding:26px 18px 12px;color:var(--paper);font:400 1rem var(--sans);outline:none;transition:border-color .3s,background .3s;resize:none}
-.in textarea{min-height:140px}
+.in textarea{min-height:140px;padding-top:34px}
 .in input:focus,.in textarea:focus{border-color:var(--lime);background:rgba(241,237,228,.08)}
 .in label{position:absolute;left:18px;top:19px;color:rgba(241,237,228,.5);font-size:.95rem;pointer-events:none;transition:all .3s var(--ease)}
 .in input:focus + label,.in input:not(:placeholder-shown) + label,.in textarea:focus + label,.in textarea:not(:placeholder-shown) + label{top:9px;font-size:.7rem;color:var(--lime);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase}
@@ -929,7 +929,7 @@ const load=()=>{try{return JSON.parse(localStorage.getItem(KEY))||null}catch(e){
 const save=d=>{localStorage.setItem(KEY,JSON.stringify(d));renderAdm();};
 let db=load();
 if(!db){const d=new Date();const ago=n=>new Date(d-n*36e5).toISOString();
- db=[{id:'MRD-'+ymd(new Date(d-26*36e5))+'-0417',name:'박지훈',co:'대원물산 / 전략기획실장',tel:'010-2481-7720',mail:'',areas:['경영 전략'],msg:'신사업 진출 타당성 검토가 필요합니다.',st:2,at:ago(26),meet:'미팅 확정 · 화상',partner:'한정우'},
+ db=[{id:'MRD-'+ymd(new Date(d-26*36e5))+'-0417',name:'박지훈',co:'대원물산 / 전략기획실장',tel:'010-2481-7720',mail:'',areas:['경영 전략'],msg:'신사업 진출 타당성 검토가 필요합니다.',st:2,at:ago(26),meet:(()=>{const m=new Date(d.getTime()+2*864e5);return (m.getMonth()+1)+'/'+m.getDate()+'('+'일월화수목금토'[m.getDay()]+') 10:00 · 대면'})(),partner:'한정우'},
      {id:'MRD-'+ymd(new Date(d-5*36e5))+'-0932',name:'최은서',co:'서린메디컬 / 인사팀장',tel:'010-5530-1184',mail:'',areas:['조직 · 인사'],msg:'병원 조직 개편과 평가제도 개선 상담 원합니다.',st:1,at:ago(5),meet:'',partner:'윤서연'}];
  localStorage.setItem(KEY,JSON.stringify(db));}
 function ymd(d){return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')}
@@ -944,6 +944,7 @@ const tel=$('#t');tel.setAttribute('inputmode','numeric');tel.setAttribute('maxl
 tel.addEventListener('input',()=>{let v=tel.value.replace(/\D/g,'').slice(0,11);tel.value=v.length<4?v:v.length<8?v.slice(0,3)+'-'+v.slice(3):v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7)});
 
 const form=$('#cform'),ferr=$('#ferr');
+$$('#cform .in input,#cform .in textarea').forEach(i=>i.addEventListener('input',()=>i.parentElement.classList.remove('bad')));
 form.addEventListener('submit',e=>{
  e.preventDefault();
  const f={name:$('#n').value.trim(),co:$('#c').value.trim(),tel:$('#t').value.trim(),mail:$('#e').value.trim(),msg:$('#m').value.trim()};
