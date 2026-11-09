@@ -35,7 +35,11 @@ img{display:block;max-width:100%}
 .grain{position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* header */
-header{position:fixed;top:0;left:0;right:0;z-index:50;mix-blend-mode:difference;color:#fff}
+header{position:fixed;top:0;left:0;right:0;z-index:50;color:var(--ink);transition:background .5s,color .5s,border-color .5s;border-bottom:1px solid transparent}
+header.solid{background:rgba(241,237,228,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+header.dark{color:var(--paper)}
+header.dark.solid{background:rgba(17,17,17,.6);border-bottom-color:rgba(241,237,228,.12)}
+header.green.solid{background:rgba(29,58,44,.75)}
 .hd{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px}
 .brand{font-weight:700;font-size:1.15rem;letter-spacing:-.03em}
 .brand sup{font-size:.55em;font-weight:500}
@@ -237,7 +241,7 @@ form .pill:hover{color:var(--ink)}
 footer{background:var(--ink);color:var(--paper);overflow:hidden}
 .ft{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:30px 0;border-top:1px solid rgba(241,237,228,.18);opacity:.65}
 .ft a:hover{color:var(--lime)}
-.wordmark{font-size:23.4vw;font-weight:750;letter-spacing:-.085em;line-height:.74;white-space:nowrap;margin-left:-.06em;padding-bottom:1vw;color:var(--paper)}
+.wordmark{font-size:25.5vw;font-weight:750;letter-spacing:-.085em;line-height:.74;white-space:nowrap;margin-left:-.06em;padding-bottom:1vw;color:var(--paper)}
 .wordmark sup{font-size:.2em;font-weight:500;vertical-align:top}
 
 /* reveal */
@@ -287,7 +291,7 @@ footer{background:var(--ink);color:var(--paper);overflow:hidden}
 <body>
 <div class="grain"></div>
 
-<header>
+<header id="hdr">
   <div class="wrap hd">
     <a href="#top" class="brand">Meridian<sup>®</sup></a>
     <nav>
@@ -584,8 +588,12 @@ steps.forEach(s=>so.observe(s));
 
 // scroll-driven
 const frame=$('#frame'),rimg=$('#rimg'),rImg=$('#rimgImg'),cap=$('#cap'),casesH=$('#casesH'),track=$('#track'),cBar=$('#cBar'),cIdx=$('#cIdx');
+const hdr=$('#hdr'),darkEls=[$('#cases'),$('#contact'),document.querySelector('footer')];
 function onScroll(){
   const vh=innerHeight;
+  hdr.classList.toggle('solid',scrollY>40);
+  let dk=null;darkEls.forEach(el=>{const b=el.getBoundingClientRect();if(b.top<=38&&b.bottom>=38)dk=el});
+  hdr.classList.toggle('dark',!!dk);hdr.classList.toggle('green',dk&&dk.id==='cases');
   // statement
   words.forEach(w=>{const r=w.getBoundingClientRect();w.classList.toggle('on',r.top<vh*.72)});
   if(mobile())return;
