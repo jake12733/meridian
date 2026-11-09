@@ -120,7 +120,7 @@ header.green.solid{background:rgba(29,58,44,.75)}
 .st-grid{display:grid;grid-template-columns:.8fr 2fr;gap:6vw;align-items:start}
 .st-side .mono{color:var(--mute);display:block;margin-bottom:28px}
 .st-photo{aspect-ratio:3/4;border-radius:16px;overflow:hidden;max-width:340px}
-.st-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15)}
+.st-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;filter:grayscale(.15)}
 .st-sign{margin-top:18px;display:flex;flex-direction:column;gap:4px}
 .st-sign b{font-size:1.05rem;font-weight:600;letter-spacing:-.02em}
 .st-sign .mono{margin:0;color:var(--ink-2)}
@@ -203,7 +203,7 @@ header.green.solid{background:rgba(29,58,44,.75)}
 .track{display:flex;gap:28px;will-change:transform;padding-left:clamp(20px,3.2vw,56px)}
 .case{flex:0 0 min(62vw,860px);height:58vh;border-radius:22px;overflow:hidden;position:relative;display:grid;grid-template-columns:1.1fr 1fr;background:var(--green-2)}
 .case .ph{position:relative;overflow:hidden}
-.case .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.case .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform 1.2s var(--ease)}
 .case:hover .ph img{transform:scale(1.06)}
 .case .tx{padding:36px 34px;display:flex;flex-direction:column;justify-content:space-between}
 .case .tx .mono{opacity:.65}
@@ -317,10 +317,10 @@ body.loading{overflow:hidden}
 .lg.d{font-weight:300;letter-spacing:.32em;font-size:1.1rem}
 .lg.e{font-weight:650;letter-spacing:-.03em}
 .lg.e i{font-style:normal;color:var(--green)}
-.pt .av{display:none;width:64px;height:64px;border-radius:50%;object-fit:cover;filter:grayscale(1)}
+.pt .av{display:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 12%;filter:grayscale(1)}
 .pt-float{position:fixed;top:0;left:0;width:200px;height:250px;border-radius:14px;overflow:hidden;pointer-events:none;z-index:45;opacity:0;transform:translate(-50%,-50%) scale(.8);transition:opacity .35s,transform .5s var(--ease)}
 .pt-float.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
-.pt-float img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);opacity:0;transition:opacity .3s}
+.pt-float img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;filter:grayscale(1) contrast(1.05);opacity:0;transition:opacity .3s}
 .pt-float img.on{opacity:1}
 .insights{padding-top:4vh;padding-bottom:14vh}
 .ins-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px;margin-top:6vh}
@@ -490,7 +490,7 @@ body.loading{overflow:hidden}
   <div class="st-grid">
     <aside class="st-side rv">
       <span class="mono">(01) — Our Belief</span>
-      <div class="st-photo"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&q=80" alt="메리디안 대표 파트너"></div>
+      <div class="st-photo"><img src="https://images.pexels.com/photos/24424109/pexels-photo-24424109/free-photo-of-business-man-fixing-shirt-cuff.jpeg?auto=compress&cs=tinysrgb&w=900" alt="메리디안 대표 파트너"></div>
       <div class="st-sign"><b>한정우</b><span class="mono">Founder · Managing Partner</span></div>
     </aside>
     <div class="st-main">
@@ -544,8 +544,8 @@ body.loading{overflow:hidden}
 </section>
 <div class="float-img" id="floatImg">
   <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80" alt="">
-  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&q=80" alt="">
-  <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=700&q=80" alt="">
+  <img src="https://images.pexels.com/photos/8101915/pexels-photo-8101915.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+  <img src="https://images.pexels.com/photos/8190814/pexels-photo-8190814.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
   <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80" alt="">
 </div>
 
@@ -574,8 +574,8 @@ body.loading{overflow:hidden}
     <div class="proc-right">
       <div class="step" data-i="01"><div class="step-ph"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="데이터 진단"></div><div class="step-tx"><span class="mono">Week 01 — 03</span><h3>진단</h3><p>경영진 인터뷰와 데이터 분석으로 문제의 본질을 정의합니다. 증상이 아니라 원인을 찾는 단계입니다.</p><ul><li>경영진 인터뷰</li><li>데이터 진단</li><li>이슈 트리</li></ul></div></div>
       <div class="step" data-i="02"><div class="step-ph"><img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1200&q=80" alt="전략 설계"></div><div class="step-tx"><span class="mono">Week 04 — 07</span><h3>설계</h3><p>복수의 시나리오를 만들고 기대 효과와 리스크를 정량화합니다. 경영진과 함께 최적안을 선택합니다.</p><ul><li>시나리오 플래닝</li><li>재무 임팩트 모델</li><li>의사결정 워크숍</li></ul></div></div>
-      <div class="step" data-i="03"><div class="step-ph"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80" alt="현장 실행"></div><div class="step-tx"><span class="mono">Week 08 — 16</span><h3>실행</h3><p>현업 조직과 한 팀이 되어 과제를 직접 실행합니다. PMO를 운영하며 주간 단위로 성과를 공유합니다.</p><ul><li>PMO 운영</li><li>Quick-win 과제</li><li>주간 리포트</li></ul></div></div>
-      <div class="step" data-i="04"><div class="step-ph"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80" alt="장기 파트너십"></div><div class="step-tx"><span class="mono">+ 6 Months</span><h3>정착</h3><p>변화가 조직의 습관이 될 때까지 KPI를 모니터링합니다. 사후 관리 6개월은 무상으로 제공합니다.</p><ul><li>KPI 대시보드</li><li>분기 리뷰</li><li>무상 사후관리</li></ul></div></div>
+      <div class="step" data-i="03"><div class="step-ph"><img src="https://images.pexels.com/photos/8101931/pexels-photo-8101931.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="현장 실행"></div><div class="step-tx"><span class="mono">Week 08 — 16</span><h3>실행</h3><p>현업 조직과 한 팀이 되어 과제를 직접 실행합니다. PMO를 운영하며 주간 단위로 성과를 공유합니다.</p><ul><li>PMO 운영</li><li>Quick-win 과제</li><li>주간 리포트</li></ul></div></div>
+      <div class="step" data-i="04"><div class="step-ph"><img src="https://images.pexels.com/photos/7644148/pexels-photo-7644148.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="장기 파트너십"></div><div class="step-tx"><span class="mono">+ 6 Months</span><h3>정착</h3><p>변화가 조직의 습관이 될 때까지 KPI를 모니터링합니다. 사후 관리 6개월은 무상으로 제공합니다.</p><ul><li>KPI 대시보드</li><li>분기 리뷰</li><li>무상 사후관리</li></ul></div></div>
     </div>
   </div>
 </section>
@@ -594,11 +594,11 @@ body.loading{overflow:hidden}
           <div class="tx"><div><span class="mono">C/01 · Manufacturing · 2025</span><h3>중견 제조사 A사<br>원가 구조 혁신</h3></div><div class="kpi"><div><b>−23%</b><small>운영 원가</small></div><div><b>+410억</b><small>연간 영업이익</small></div></div></div>
         </article>
         <article class="case">
-          <div class="ph"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80" alt=""></div>
+          <div class="ph"><img src="https://images.pexels.com/photos/7644016/pexels-photo-7644016.jpeg?auto=compress&cs=tinysrgb&w=1200" alt=""></div>
           <div class="tx"><div><span class="mono">C/02 · Healthcare · 2024</span><h3>B의료원<br>조직 재설계 · 성과 체계</h3></div><div class="kpi"><div><b>+38%</b><small>환자 만족도</small></div><div><b>−31%</b><small>핵심 인력 이직률</small></div></div></div>
         </article>
         <article class="case">
-          <div class="ph"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80" alt=""></div>
+          <div class="ph"><img src="https://images.pexels.com/photos/7643893/pexels-photo-7643893.jpeg?auto=compress&cs=tinysrgb&w=1200" alt=""></div>
           <div class="tx"><div><span class="mono">C/03 · Retail · M&amp;A · 2024</span><h3>유통 그룹 C사<br>온라인 플랫폼 인수 · PMI</h3></div><div class="kpi"><div><b>3.2×</b><small>온라인 매출</small></div><div><b>9개월</b><small>통합 완료</small></div></div></div>
         </article>
         <article class="case">
@@ -621,14 +621,14 @@ body.loading{overflow:hidden}
     <h2 class="rv">위임하지 않는<br>파트너들.</h2>
   </div>
   <div class="pt-list">
-    <div class="pt" data-p="0"><span class="mono">P/01</span><img class="av" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=160&h=160&fit=crop&q=70" alt="" loading="lazy"><h4>한정우</h4><span class="mono">Founder · Managing Partner</span><span class="bg">前 McKinsey 서울사무소 파트너 · Wharton MBA</span></div>
-    <div class="pt" data-p="1"><span class="mono">P/02</span><img class="av" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&h=160&fit=crop&q=70" alt="" loading="lazy"><h4>윤서연</h4><span class="mono">Partner · Organization</span><span class="bg">前 BCG 프린시펄 · 서울대 경영학 박사</span></div>
-    <div class="pt" data-p="2"><span class="mono">P/03</span><img class="av" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=160&h=160&fit=crop&q=70" alt="" loading="lazy"><h4>강민준</h4><span class="mono">Partner · M&amp;A</span><span class="bg">前 삼일PwC Deals 상무 · KICPA</span></div>
-    <div class="pt" data-p="3"><span class="mono">P/04</span><img class="av" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&q=70" alt="" loading="lazy"><h4>이도현</h4><span class="mono">Partner · Digital</span><span class="bg">前 Accenture 디지털 전략 리드 · KAIST 산업공학</span></div>
+    <div class="pt" data-p="0"><span class="mono">P/01</span><img class="av" src="https://images.pexels.com/photos/24424109/pexels-photo-24424109/free-photo-of-business-man-fixing-shirt-cuff.jpeg?auto=compress&cs=tinysrgb&w=240" alt="" loading="lazy"><h4>한정우</h4><span class="mono">Founder · Managing Partner</span><span class="bg">前 McKinsey 서울사무소 파트너 · Wharton MBA</span></div>
+    <div class="pt" data-p="1"><span class="mono">P/02</span><img class="av" src="https://images.pexels.com/photos/26728099/pexels-photo-26728099/free-photo-of-portrait-of-a-woman-in-a-black-suit.jpeg?auto=compress&cs=tinysrgb&w=240" alt="" loading="lazy"><h4>윤서연</h4><span class="mono">Partner · Organization</span><span class="bg">前 BCG 프린시펄 · 서울대 경영학 박사</span></div>
+    <div class="pt" data-p="2"><span class="mono">P/03</span><img class="av" src="https://images.pexels.com/photos/8584319/pexels-photo-8584319.png?auto=compress&cs=tinysrgb&w=240" alt="" loading="lazy"><h4>강민준</h4><span class="mono">Partner · M&amp;A</span><span class="bg">前 삼일PwC Deals 상무 · KICPA</span></div>
+    <div class="pt" data-p="3"><span class="mono">P/04</span><img class="av" src="https://images.pexels.com/photos/4041089/pexels-photo-4041089.jpeg?auto=compress&cs=tinysrgb&w=240" alt="" loading="lazy"><h4>이도현</h4><span class="mono">Partner · Digital</span><span class="bg">前 Accenture 디지털 전략 리드 · KAIST 산업공학</span></div>
   </div>
 </section>
 
-<div class="pt-float" id="ptFloat"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=750&fit=crop&q=75" alt=""><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop&q=75" alt=""><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=750&fit=crop&q=75" alt=""><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=750&fit=crop&q=75" alt=""></div>
+<div class="pt-float" id="ptFloat"><img src="https://images.pexels.com/photos/24424109/pexels-photo-24424109/free-photo-of-business-man-fixing-shirt-cuff.jpeg?auto=compress&cs=tinysrgb&w=700" alt=""><img src="https://images.pexels.com/photos/26728099/pexels-photo-26728099/free-photo-of-portrait-of-a-woman-in-a-black-suit.jpeg?auto=compress&cs=tinysrgb&w=700" alt=""><img src="https://images.pexels.com/photos/8584319/pexels-photo-8584319.png?auto=compress&cs=tinysrgb&w=700" alt=""><img src="https://images.pexels.com/photos/4041089/pexels-photo-4041089.jpeg?auto=compress&cs=tinysrgb&w=700" alt=""></div>
 
 <!-- INSIGHTS -->
 <section class="insights wrap" id="insights">
@@ -638,7 +638,7 @@ body.loading{overflow:hidden}
   </div>
   <div class="ins-grid">
     <a class="ins rv" href="#contact"><div class="im"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" alt="" loading="lazy"><span class="cat mono">Report</span></div><div class="meta mono"><span>2026 Outlook</span><span>12 min</span></div><h3><span>2027 중견기업 성장 전략 보고서: 불확실성 속 '선택과 집중'의 기준</span></h3><span class="rd">리포트 받기 →</span></a>
-    <a class="ins rv" href="#contact"><div class="im"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=80" alt="" loading="lazy"><span class="cat mono">Column</span></div><div class="meta mono"><span>Organization</span><span>6 min</span></div><h3><span>조직 개편이 실패하는 세 가지 이유</span></h3><span class="rd">읽기 →</span></a>
+    <a class="ins rv" href="#contact"><div class="im"><img src="https://images.pexels.com/photos/8101915/pexels-photo-8101915.jpeg?auto=compress&cs=tinysrgb&w=900" alt="" loading="lazy"><span class="cat mono">Column</span></div><div class="meta mono"><span>Organization</span><span>6 min</span></div><h3><span>조직 개편이 실패하는 세 가지 이유</span></h3><span class="rd">읽기 →</span></a>
     <a class="ins rv" href="#contact"><div class="im"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80" alt="" loading="lazy"><span class="cat mono">Case Note</span></div><div class="meta mono"><span>M&amp;A</span><span>8 min</span></div><h3><span>PMI 100일, 시너지는 첫 주에 결정된다</span></h3><span class="rd">읽기 →</span></a>
   </div>
 </section>
