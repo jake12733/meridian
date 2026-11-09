@@ -150,6 +150,9 @@ header.green.solid{background:rgba(29,58,44,.75)}
 .step{min-height:62vh;display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--line);padding:40px 0;opacity:.25;transition:opacity .6s}
 .step.on{opacity:1}
 .step .mono{color:var(--mute)}
+.step-ph{width:100%;max-width:560px;aspect-ratio:16/10;border-radius:16px;overflow:hidden;margin-bottom:30px}
+.step-ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.2s var(--ease)}
+.step.on .step-ph img{transform:scale(1)}
 .step h3{font-size:clamp(2rem,4vw,3.8rem);font-weight:620;letter-spacing:-.055em;margin:14px 0 18px;line-height:1.05}
 .step p{color:var(--ink-2);max-width:480px;font-size:1.02rem}
 .step ul{list-style:none;margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
@@ -425,9 +428,9 @@ footer{background:var(--ink);color:var(--paper);overflow:hidden}
       <div class="proc-bar"><i id="procBar"></i></div>
     </div>
     <div class="proc-right">
-      <div class="step" data-i="01"><span class="mono">Week 01 — 03</span><h3>진단</h3><p>경영진 인터뷰와 데이터 분석으로 문제의 본질을 정의합니다. 증상이 아니라 원인을 찾는 단계입니다.</p><ul><li>경영진 인터뷰</li><li>데이터 진단</li><li>이슈 트리</li></ul></div>
-      <div class="step" data-i="02"><span class="mono">Week 04 — 07</span><h3>설계</h3><p>복수의 시나리오를 만들고 기대 효과와 리스크를 정량화합니다. 경영진과 함께 최적안을 선택합니다.</p><ul><li>시나리오 플래닝</li><li>재무 임팩트 모델</li><li>의사결정 워크숍</li></ul></div>
-      <div class="step" data-i="03"><span class="mono">Week 08 — 16</span><h3>실행</h3><p>현업 조직과 한 팀이 되어 과제를 직접 실행합니다. PMO를 운영하며 주간 단위로 성과를 공유합니다.</p><ul><li>PMO 운영</li><li>Quick-win 과제</li><li>주간 리포트</li></ul></div>
+      <div class="step" data-i="01"><div class="step-ph"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="데이터 진단"></div><span class="mono">Week 01 — 03</span><h3>진단</h3><p>경영진 인터뷰와 데이터 분석으로 문제의 본질을 정의합니다. 증상이 아니라 원인을 찾는 단계입니다.</p><ul><li>경영진 인터뷰</li><li>데이터 진단</li><li>이슈 트리</li></ul></div>
+      <div class="step" data-i="02"><div class="step-ph"><img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1200&q=80" alt="전략 설계"></div><span class="mono">Week 04 — 07</span><h3>설계</h3><p>복수의 시나리오를 만들고 기대 효과와 리스크를 정량화합니다. 경영진과 함께 최적안을 선택합니다.</p><ul><li>시나리오 플래닝</li><li>재무 임팩트 모델</li><li>의사결정 워크숍</li></ul></div>
+      <div class="step" data-i="03"><div class="step-ph"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80" alt="현장 실행"></div><span class="mono">Week 08 — 16</span><h3>실행</h3><p>현업 조직과 한 팀이 되어 과제를 직접 실행합니다. PMO를 운영하며 주간 단위로 성과를 공유합니다.</p><ul><li>PMO 운영</li><li>Quick-win 과제</li><li>주간 리포트</li></ul></div>
       <div class="step" data-i="04"><span class="mono">+ 6 Months</span><h3>정착</h3><p>변화가 조직의 습관이 될 때까지 KPI를 모니터링합니다. 사후 관리 6개월은 무상으로 제공합니다.</p><ul><li>KPI 대시보드</li><li>분기 리뷰</li><li>무상 사후관리</li></ul></div>
     </div>
   </div>
