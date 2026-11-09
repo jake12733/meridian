@@ -3,667 +3,814 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MERIDIAN | 메리디안 전략 컨설팅</title>
-<meta name="description" content="메리디안 컨설팅 - 경영 전략, 조직 설계, 디지털 전환, M&A 자문까지. 결정의 순간, 가장 정확한 방향을 제시합니다.">
-<meta property="og:title" content="MERIDIAN | 메리디안 전략 컨설팅">
-<meta property="og:description" content="결정의 순간, 가장 정확한 방향을.">
+<title>Meridian® — Strategy Consulting</title>
+<meta name="description" content="메리디안 컨설팅. 다음 결정을 설계합니다. 경영 전략 · 조직 · 디지털 전환 · M&A 자문.">
+<meta name="theme-color" content="#f1ede4">
+<link rel="canonical" href="https://jake12733.github.io/meridian/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Meridian® — 다음 결정을 함께 설계합니다">
+<meta property="og:description" content="경영 전략 · 조직 · 디지털 전환 · M&A. 보고서가 아니라 결과를 납품하는 전략 컨설팅 펌.">
+<meta property="og:image" content="https://jake12733.github.io/meridian/hero-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='38' fill='%23d8e86c'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="video" href="hero.mp4">
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0b131f;
-  --navy-2:#101b2b;
-  --navy-3:#16243a;
-  --gold:#d4af37;
-  --gold-soft:#e6cc7a;
-  --gold-dim:rgba(212,175,55,.18);
-  --ivory:#f4efe4;
-  --text:#c9cdd6;
-  --muted:#8a93a3;
-  --line:rgba(212,175,55,.22);
-  --serif-en:'Cormorant Garamond',serif;
-  --serif-ko:'Noto Serif KR',serif;
-  --sans:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
-  --ease:cubic-bezier(.22,.61,.36,1);
+  --paper:#f1ede4;
+  --paper-2:#e8e2d5;
+  --ink:#111111;
+  --ink-2:#3a3a36;
+  --mute:#85827a;
+  --green:#1d3a2c;
+  --green-2:#25493a;
+  --lime:#d8e86c;
+  --line:rgba(17,17,17,.14);
+  --sans:'Pretendard Variable',Pretendard,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--navy);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.75;letter-spacing:-.01em;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html,body{overflow-x:clip}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:420;line-height:1.6;letter-spacing:-.015em;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-::selection{background:var(--gold);color:var(--navy)}
-.container{width:min(1240px,90%);margin:0 auto}
-.eyebrow{font-family:var(--serif-en);font-style:italic;color:var(--gold);font-size:1.05rem;letter-spacing:.12em;display:inline-flex;align-items:center;gap:14px}
-.eyebrow::before{content:"";width:36px;height:1px;background:var(--gold)}
-.h-sec{font-family:var(--serif-ko);font-weight:400;color:var(--ivory);font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.35;letter-spacing:-.03em;margin-top:18px}
-.h-sec em{font-style:normal;color:var(--gold)}
-.lead{color:var(--muted);font-size:1.02rem;max-width:560px;margin-top:22px}
-section{position:relative}
-.pad{padding:150px 0}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:12px;padding:17px 34px;font-size:.92rem;font-weight:500;letter-spacing:.06em;border:1px solid var(--gold);transition:all .5s var(--ease);position:relative;overflow:hidden;cursor:pointer;font-family:var(--sans)}
-.btn span.arr{transition:transform .5s var(--ease)}
-.btn:hover span.arr{transform:translateX(6px)}
-.btn-gold{background:var(--gold);color:var(--navy)}
-.btn-gold:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
-.btn-line{color:var(--ivory);border-color:rgba(244,239,228,.35)}
-.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+::selection{background:var(--lime);color:var(--ink)}
+.wrap{padding:0 clamp(20px,3.2vw,56px)}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* header */
-header{position:fixed;inset:0 0 auto;z-index:100;transition:all .5s var(--ease);border-bottom:1px solid transparent}
-header.scrolled{background:rgba(11,19,31,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:92px;transition:height .5s var(--ease)}
-header.scrolled .nav{height:74px}
-.logo{display:flex;align-items:center;gap:14px}
-.logo-mark{width:38px;height:38px;border:1px solid var(--gold);display:grid;place-items:center;transform:rotate(45deg)}
-.logo-mark i{width:10px;height:10px;background:var(--gold);display:block}
-.logo-text{font-family:var(--serif-en);font-size:1.45rem;letter-spacing:.32em;color:var(--ivory);font-weight:500}
-.logo-text small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.42em;color:var(--gold);margin-top:-4px;font-weight:400}
-.menu{display:flex;gap:46px;align-items:center}
-.menu a{font-size:.88rem;letter-spacing:.08em;color:var(--text);position:relative;padding:4px 0;transition:color .3s}
-.menu a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--gold);transition:width .4s var(--ease)}
-.menu a:hover{color:var(--gold)}
-.menu a:hover::after{width:100%}
-.nav .btn{padding:12px 24px;font-size:.82rem}
-.burger{display:none;width:32px;height:20px;position:relative;background:none;border:0;cursor:pointer}
-.burger span{position:absolute;left:0;width:100%;height:1px;background:var(--ivory);transition:all .4s var(--ease)}
-.burger span:nth-child(1){top:0}.burger span:nth-child(2){top:10px}.burger span:nth-child(3){top:20px}
-.burger.on span:nth-child(1){top:10px;transform:rotate(45deg)}
-.burger.on span:nth-child(2){opacity:0}
-.burger.on span:nth-child(3){top:10px;transform:rotate(-45deg)}
-.mobile-menu{position:fixed;inset:0;background:var(--navy);z-index:90;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:34px;opacity:0;pointer-events:none;transition:opacity .5s var(--ease)}
-.mobile-menu.on{opacity:1;pointer-events:auto}
-.mobile-menu a{font-family:var(--serif-ko);font-size:1.6rem;color:var(--ivory)}
-.mobile-menu a:hover{color:var(--gold)}
+header{position:fixed;top:0;left:0;right:0;z-index:50;color:var(--ink);transition:background .5s,color .5s,border-color .5s;border-bottom:1px solid transparent}
+header.solid{background:rgba(241,237,228,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+header.dark{color:var(--paper)}
+header.dark.solid{background:rgba(17,17,17,.6);border-bottom-color:rgba(241,237,228,.12)}
+header.green.solid{background:rgba(29,58,44,.75)}
+.hd{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px}
+.brand{font-weight:700;font-size:1.15rem;letter-spacing:-.03em}
+.brand sup{font-size:.55em;font-weight:500}
+.hd nav{display:flex;gap:30px}
+.hd nav a{font-size:.88rem;font-weight:500;position:relative}
+.hd nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.hd nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.hd-r{display:flex;justify-content:flex-end;gap:28px;align-items:center}
+.clock{opacity:.8}
+.hd-cta{font-size:.88rem;font-weight:600}
+.menu-btn{display:none;font-weight:600;font-size:.88rem;background:none;border:0;color:inherit;cursor:pointer;font-family:var(--sans)}
+
+/* mobile overlay */
+.ov{position:fixed;inset:0;background:var(--green);color:var(--paper);z-index:60;display:flex;flex-direction:column;justify-content:space-between;padding:24px 22px 40px;clip-path:inset(0 0 100% 0);transition:clip-path .8s var(--ease)}
+.ov.on{clip-path:inset(0 0 0 0)}
+.ov-top{display:flex;justify-content:space-between;align-items:center;height:28px}
+.ov-top button{background:none;border:0;color:inherit;font:600 .9rem var(--sans);cursor:pointer}
+.ov nav a{display:block;font-size:13vw;font-weight:650;letter-spacing:-.05em;line-height:1.08}
 
 /* hero */
-.hero{min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:140px 0 120px}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2000&q=80') center/cover;opacity:.16;transform:scale(1.08);animation:slowzoom 24s ease-in-out infinite alternate;filter:grayscale(.4)}
-@keyframes slowzoom{to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,transparent 0%,var(--navy) 72%),linear-gradient(180deg,rgba(11,19,31,.3) 0%,var(--navy) 100%);pointer-events:none}
-#stars{position:absolute;inset:0;z-index:1}
-.hero .container{position:relative;z-index:2}
-.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:end}
-.hero h1{font-family:var(--serif-ko);font-weight:300;color:var(--ivory);font-size:clamp(2.5rem,6vw,5.2rem);line-height:1.22;letter-spacing:-.045em;margin-top:30px}
-.hero h1 .gold{color:var(--gold);font-weight:400}
-.hero h1 .line{display:block;overflow:hidden}
-.hero h1 .line > span{display:inline-block;transform:translateY(105%);animation:rise 1.3s var(--ease) forwards}
-.hero h1 .line:nth-child(2) > span{animation-delay:.15s}
-.hero h1 .line:nth-child(3) > span{animation-delay:.3s}
-@keyframes rise{to{transform:translateY(0)}}
-.hero-sub{margin-top:34px;max-width:520px;color:var(--muted);font-size:1.06rem;opacity:0;animation:fade 1.2s .7s forwards}
-.hero-cta{margin-top:48px;display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fade 1.2s .9s forwards}
-@keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.hero-card{border:1px solid var(--line);background:linear-gradient(160deg,rgba(22,36,58,.7),rgba(11,19,31,.6));backdrop-filter:blur(10px);padding:38px 36px;opacity:0;animation:fade 1.2s 1.1s forwards}
-.hero-card .label{font-size:.75rem;letter-spacing:.3em;color:var(--gold)}
-.hero-card .quote{font-family:var(--serif-ko);color:var(--ivory);font-size:1.12rem;line-height:1.7;margin:18px 0 26px}
-.hero-card .row{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px}
-.hero-card .row b{display:block;font-family:var(--serif-en);font-size:2.1rem;color:var(--gold);font-weight:500;line-height:1}
-.hero-card .row small{font-size:.75rem;color:var(--muted);letter-spacing:.04em}
-.scroll-ind{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:12px;font-size:.66rem;letter-spacing:.4em;color:var(--muted)}
-.scroll-ind i{width:1px;height:54px;background:linear-gradient(var(--gold),transparent);animation:drop 2.2s infinite}
-@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero{padding-top:150px}
+.hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-bottom:28px;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.hero-meta b{display:block;color:var(--ink);font-weight:500;font-family:var(--sans);text-transform:none;font-size:.9rem;letter-spacing:-.01em;margin-top:6px}
+.hero-stage{position:relative}
+.hero-film{position:absolute;right:0;top:5vh;bottom:0;width:31%;border-radius:20px;overflow:hidden;background:var(--paper-2);opacity:0;animation:fi 1.4s .5s forwards}
+.hero-film video{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05)}
+.hero-film::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,17,17,.55));pointer-events:none}
+.hero-film .fcap{position:absolute;left:20px;right:20px;bottom:18px;z-index:2;color:var(--paper);display:flex;justify-content:space-between;align-items:center}
+.hero-film .rec{display:inline-flex;align-items:center;gap:8px}
+.hero-film .rec::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.2}}
+.hero h1{font-size:clamp(3.4rem,11.6vw,13.5rem);font-weight:680;letter-spacing:-.065em;line-height:.92;margin-top:5vh}
+.hero h1 .r{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .r span{display:inline-block;transform:translateY(110%);animation:up 1.4s var(--ease) forwards}
+.hero h1 .r:nth-child(2) span{animation-delay:.08s}
+.hero h1 .r:nth-child(3) span{animation-delay:.16s}
+.hero h1 .ind{padding-left:16vw}
+.hero h1 .thin{font-weight:250;font-style:normal}
+.hero h1 .dot{color:var(--green)}
+@keyframes up{to{transform:none}}
+.hero-foot{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-top:6vh;padding-bottom:40px}
+.hero-foot p{max-width:440px;font-size:1.06rem;color:var(--ink-2);opacity:0;animation:fi 1.2s .8s forwards}
+.hero-foot .act{display:flex;justify-content:flex-end;gap:12px;opacity:0;animation:fi 1.2s 1s forwards}
+@keyframes fi{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.pill{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 26px;border-radius:999px;font-weight:600;font-size:.94rem;border:1px solid var(--ink);transition:all .5s var(--ease);position:relative;overflow:hidden;isolation:isolate;cursor:pointer;font-family:var(--sans);background:none;color:var(--ink)}
+.pill::before{content:"";position:absolute;inset:0;background:var(--ink);transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1;border-radius:inherit}
+.pill:hover{color:var(--paper)}
+.pill:hover::before{transform:none}
+.pill.solid{background:var(--ink);color:var(--paper)}
+.pill.solid::before{background:var(--green)}
+.pill .ar{display:inline-block;transition:transform .5s var(--ease)}
+.pill:hover .ar{transform:rotate(-45deg)}
 
-/* marquee */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0;overflow:hidden;background:var(--navy-2)}
-.marquee-track{display:flex;gap:70px;width:max-content;animation:mq 40s linear infinite}
-.marquee-track span{font-family:var(--serif-en);font-size:1.5rem;letter-spacing:.2em;color:rgba(244,239,228,.4);white-space:nowrap;display:flex;align-items:center;gap:70px}
-.marquee-track span::after{content:"◆";font-size:.6rem;color:var(--gold)}
-@keyframes mq{to{transform:translateX(-50%)}}
+/* expanding image */
+.reveal-img{height:220vh;position:relative}
+.reveal-img .sticky{position:sticky;top:0;height:100vh;display:grid;place-items:center;overflow:hidden}
+.reveal-img .frame{width:100%;height:100%;clip-path:inset(18% 22% 18% 22% round 24px);will-change:clip-path;position:relative}
+.reveal-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.2);will-change:transform}
+.reveal-img .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,17,17,.6));pointer-events:none}
+.reveal-img .cap{position:absolute;left:clamp(20px,3.2vw,56px);bottom:8vh;line-height:1.25;color:#fff;z-index:2;display:flex;gap:40px;opacity:0;transition:opacity .6s}
+.reveal-img .cap.on{opacity:1}
+.reveal-img .cap b{display:block;font-size:clamp(1.4rem,2.6vw,2.4rem);font-weight:600;letter-spacing:-.04em;font-family:var(--sans);text-transform:none}
 
-/* about */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
-.about-img{position:relative;aspect-ratio:4/5}
-.about-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) contrast(1.05)}
-.about-img::before{content:"";position:absolute;inset:-22px 22px 22px -22px;border:1px solid var(--gold);z-index:-1}
-.about-img .badge{position:absolute;right:-34px;bottom:48px;background:var(--gold);color:var(--navy);padding:26px 30px;text-align:center}
-.about-img .badge b{display:block;font-family:var(--serif-en);font-size:3rem;line-height:1;font-weight:600}
-.about-img .badge small{font-size:.76rem;font-weight:600;letter-spacing:.08em}
-.about-text p{margin-top:24px;color:var(--muted)}
-.about-sign{margin-top:44px;display:flex;align-items:center;gap:22px;padding-top:30px;border-top:1px solid var(--line)}
-.about-sign .sig{font-family:var(--serif-en);font-style:italic;font-size:2rem;color:var(--gold)}
-.about-sign small{display:block;color:var(--muted);font-size:.82rem;line-height:1.5}
-.about-sign small b{color:var(--ivory);font-weight:500;font-size:.95rem}
+/* statement */
+.statement{padding-top:20vh;padding-bottom:18vh}
+.st-grid{display:grid;grid-template-columns:.8fr 2fr;gap:6vw;align-items:start}
+.st-side .mono{color:var(--mute);display:block;margin-bottom:28px}
+.st-photo{aspect-ratio:3/4;border-radius:16px;overflow:hidden;max-width:340px}
+.st-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15)}
+.st-sign{margin-top:18px;display:flex;flex-direction:column;gap:4px}
+.st-sign b{font-size:1.05rem;font-weight:600;letter-spacing:-.02em}
+.st-sign .mono{margin:0;color:var(--ink-2)}
+.st-head{font-size:clamp(2.6rem,5.6vw,6rem);font-weight:680;letter-spacing:-.06em;line-height:1.02;word-break:keep-all}
+.st-head span{color:var(--green)}
+#stmt{margin-top:44px;font-size:clamp(1.25rem,1.9vw,1.85rem);font-weight:500;letter-spacing:-.035em;line-height:1.6;word-break:keep-all;max-width:860px;color:var(--ink)}
+#stmt .w{opacity:.22;transition:opacity .4s}
+#stmt .w.on{opacity:1}
+#stmt .hl{background:linear-gradient(transparent 60%,var(--lime) 60%);font-weight:650}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:70px}
+.pr{border-top:2px solid var(--ink);padding-top:22px}
+.pr .mono{color:var(--green);font-weight:500}
+.pr h4{font-size:1.35rem;font-weight:650;letter-spacing:-.04em;margin:12px 0 10px}
+.pr p{color:var(--ink-2);font-size:.95rem;line-height:1.7;word-break:keep-all}
+/* section head */
+.sh{display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:28px 0;border-top:1px solid var(--ink);align-items:start}
+.sh h2{font-size:clamp(2.2rem,5vw,5.2rem);font-weight:650;letter-spacing:-.06em;line-height:.98}
+.sh .mono{padding-top:10px;color:var(--ink-2)}
 
-/* stats */
-.stats{background:var(--navy-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:70px 30px;text-align:center;border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat b{font-family:var(--serif-en);font-size:clamp(2.8rem,4.6vw,4rem);color:var(--ivory);font-weight:400;line-height:1}
-.stat b sup{color:var(--gold);font-size:.5em;margin-left:4px}
-.stat p{margin-top:14px;color:var(--muted);font-size:.9rem;letter-spacing:.04em}
+/* services list */
+.services{padding-bottom:10vh}
+.svc-list{margin-top:6vh}
+.svc-row{display:grid;grid-template-columns:80px 1.2fr 1.4fr 40px;gap:30px;align-items:center;padding:34px 0;border-top:1px solid var(--line);cursor:pointer;position:relative;transition:padding .6s var(--ease)}
+.svc-row:last-child{border-bottom:1px solid var(--line)}
+.svc-row .n{color:var(--mute)}
+.svc-row h3{font-size:clamp(1.6rem,3.2vw,3.2rem);font-weight:600;letter-spacing:-.05em;line-height:1.05;transition:transform .6s var(--ease)}
+.svc-row p{color:var(--ink-2);font-size:.98rem;max-width:520px}
+.svc-row .pl{width:36px;height:36px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;transition:all .5s var(--ease);font-size:1.1rem}
+.svc-row:hover h3{transform:translateX(18px)}
+.svc-row:hover .pl{background:var(--ink);color:var(--paper);transform:rotate(45deg)}
+.svc-detail{grid-column:2/-1;display:grid;grid-template-rows:0fr;transition:grid-template-rows .7s var(--ease)}
+.svc-detail > div{overflow:hidden}
+.svc-row.open .svc-detail{grid-template-rows:1fr}
+.svc-row.open .pl{background:var(--green);border-color:var(--green);color:var(--paper);transform:rotate(45deg)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding-top:24px}
+.tags span{border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:.84rem;background:var(--paper-2)}
+.float-img{position:fixed;top:0;left:0;width:300px;height:380px;pointer-events:none;z-index:40;border-radius:14px;overflow:hidden;opacity:0;transform:translate(-50%,-50%) scale(.7) rotate(-6deg);transition:opacity .4s,transform .6s var(--ease)}
+.float-img.on{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-3deg)}
+.float-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
+.float-img img.on{opacity:1}
 
-/* services */
-.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:80px;flex-wrap:wrap}
-.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.svc{padding:54px 38px 50px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;transition:background .6s var(--ease);overflow:hidden;min-height:440px;display:flex;flex-direction:column}
-.svc::before{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--gold);transition:width .7s var(--ease)}
-.svc:hover{background:var(--navy-3)}
-.svc:hover::before{width:100%}
-.svc .num{font-family:var(--serif-en);color:var(--gold);font-size:1rem;letter-spacing:.2em}
-.svc .ico{width:54px;height:54px;margin:40px 0 30px;color:var(--gold)}
-.svc h3{font-family:var(--serif-ko);font-weight:400;color:var(--ivory);font-size:1.42rem;letter-spacing:-.02em}
-.svc .en{font-family:var(--serif-en);font-style:italic;color:var(--muted);font-size:.95rem;margin-top:4px}
-.svc p{margin-top:20px;color:var(--muted);font-size:.92rem;flex:1}
-.svc ul{list-style:none;margin-top:24px;font-size:.85rem;color:var(--text)}
-.svc li{padding:7px 0;border-top:1px dashed rgba(212,175,55,.15);display:flex;gap:10px}
-.svc li::before{content:"—";color:var(--gold)}
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.num{padding:34px 24px 60px 0;border-right:1px solid var(--line)}
+.num + .num{padding-left:24px}
+.num:last-child{border-right:0}
+.num b{display:block;font-size:clamp(3.2rem,7vw,7.4rem);font-weight:300;letter-spacing:-.07em;line-height:1;margin-top:60px}
+.num b em{font-style:normal;font-size:.4em;font-weight:500;color:var(--green);vertical-align:top;margin-left:4px}
+.num p{margin-top:16px;color:var(--ink-2);font-size:.95rem}
 
-/* approach */
-.approach{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:90px;position:relative}
-.steps::before{content:"";position:absolute;top:34px;left:34px;right:34px;height:1px;background:var(--line)}
-.step{position:relative}
-.step .dot{width:68px;height:68px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;background:var(--navy);font-family:var(--serif-en);color:var(--gold);font-size:1.35rem;position:relative;transition:all .5s var(--ease)}
-.step:hover .dot{background:var(--gold);color:var(--navy)}
-.step h4{font-family:var(--serif-ko);color:var(--ivory);font-weight:400;font-size:1.3rem;margin-top:34px}
-.step .wk{font-size:.75rem;letter-spacing:.2em;color:var(--gold);margin-top:6px}
-.step p{color:var(--muted);font-size:.92rem;margin-top:16px;padding-right:10px}
+/* process (sticky split) */
+.process{padding-top:20vh;padding-bottom:20vh}
+.proc-grid{display:grid;grid-template-columns:.55fr 1.45fr;gap:4vw;margin-top:6vh}
+.proc-left{position:sticky;top:120px;height:fit-content}
+.proc-left .big{font-size:clamp(6rem,14vw,16rem);font-weight:200;letter-spacing:-.08em;line-height:.8;color:var(--green)}
+.proc-left .big span{display:inline-block;transition:transform .7s var(--ease),opacity .4s}
+.proc-left p{margin-top:30px;max-width:380px;color:var(--ink-2)}
+.proc-bar{margin-top:30px;height:2px;background:var(--line);max-width:380px;position:relative}
+.proc-bar i{position:absolute;inset:0 auto 0 0;background:var(--ink);width:25%;transition:width .7s var(--ease)}
+.step{min-height:62vh;display:grid;grid-template-columns:1fr 1fr;gap:3.2vw;align-items:center;border-top:1px solid var(--line);padding:40px 0;opacity:.25;transition:opacity .6s}
+.step.on{opacity:1}
+.step .mono{color:var(--mute)}
+.step-ph{width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden}
+.step-tx{grid-column:2}
+.step-ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.2s var(--ease)}
+.step.on .step-ph img{transform:scale(1)}
+.step h3{font-size:clamp(2rem,4vw,3.8rem);font-weight:620;letter-spacing:-.055em;margin:14px 0 18px;line-height:1.05}
+.step p{color:var(--ink-2);max-width:480px;font-size:1.02rem}
+.step ul{list-style:none;margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.step li{font-size:.84rem;padding:6px 12px;border-radius:999px;background:var(--ink);color:var(--paper)}
 
-/* cases */
-.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.case{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:default;border:1px solid var(--line)}
-.case img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.6) brightness(.55);transition:transform 1.2s var(--ease),filter .8s}
-.case:hover img{transform:scale(1.07);filter:grayscale(.1) brightness(.45)}
-.case::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(11,19,31,.95) 100%)}
-.case-body{position:absolute;inset:auto 0 0;padding:40px 36px;z-index:2}
-.case .tag{font-size:.72rem;letter-spacing:.24em;color:var(--gold);border:1px solid var(--line);padding:5px 12px;display:inline-block}
-.case h3{font-family:var(--serif-ko);color:var(--ivory);font-weight:400;font-size:1.32rem;margin-top:18px;line-height:1.5}
-.case .result{display:flex;gap:30px;margin-top:24px;padding-top:22px;border-top:1px solid var(--line);max-height:0;opacity:0;overflow:hidden;transition:all .7s var(--ease)}
-.case:hover .result{max-height:140px;opacity:1}
-.case .result b{display:block;font-family:var(--serif-en);font-size:2.2rem;color:var(--gold);font-weight:500;line-height:1}
-.case .result small{font-size:.76rem;color:var(--muted)}
-
-/* testimonial */
-.testi{text-align:center;background:var(--navy-2);overflow:hidden}
-.testi .qmark{font-family:var(--serif-en);font-size:9rem;line-height:.6;color:var(--gold);opacity:.6}
-.testi-slider{position:relative;min-height:250px;max-width:900px;margin:30px auto 0}
-.testi-item{position:absolute;inset:0;opacity:0;transform:translateY(20px);transition:all 1s var(--ease);pointer-events:none}
-.testi-item.on{opacity:1;transform:none;pointer-events:auto}
-.testi-item blockquote{font-family:var(--serif-ko);font-weight:300;color:var(--ivory);font-size:clamp(1.25rem,2.4vw,1.8rem);line-height:1.75;letter-spacing:-.02em}
-.testi-item cite{display:block;margin-top:34px;font-style:normal;color:var(--gold);font-size:.9rem;letter-spacing:.1em}
-.testi-item cite span{color:var(--muted);margin-left:10px}
-.testi-dots{display:flex;justify-content:center;gap:12px;margin-top:20px}
-.testi-dots button{width:34px;height:2px;border:0;background:rgba(244,239,228,.2);cursor:pointer;transition:background .4s}
-.testi-dots button.on{background:var(--gold)}
+/* horizontal cases */
+.cases{background:var(--green);color:var(--paper);position:relative}
+.cases-h{height:330vh;position:relative}
+.cases-stick{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.cases-top{display:flex;justify-content:space-between;align-items:end;padding-bottom:4vh}
+.cases-top h2{font-size:clamp(2.4rem,5.4vw,5.6rem);font-weight:650;letter-spacing:-.06em;line-height:.95}
+.cases-top h2 span{color:var(--lime)}
+.cases-top .mono{opacity:.7}
+.track{display:flex;gap:28px;will-change:transform;padding-left:clamp(20px,3.2vw,56px)}
+.case{flex:0 0 min(62vw,860px);height:58vh;border-radius:22px;overflow:hidden;position:relative;display:grid;grid-template-columns:1.1fr 1fr;background:var(--green-2)}
+.case .ph{position:relative;overflow:hidden}
+.case .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.case:hover .ph img{transform:scale(1.06)}
+.case .tx{padding:36px 34px;display:flex;flex-direction:column;justify-content:space-between}
+.case .tx .mono{opacity:.65}
+.case h3{font-size:clamp(1.4rem,2.2vw,2.1rem);font-weight:600;letter-spacing:-.045em;line-height:1.2;margin-top:14px}
+.case .kpi{display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px solid rgba(241,237,228,.2);padding-top:22px}
+.case .kpi b{display:block;font-size:clamp(2rem,3.4vw,3.2rem);font-weight:300;letter-spacing:-.06em;line-height:1;color:var(--lime)}
+.case .kpi small{font-size:.8rem;opacity:.7}
+.case.end{background:var(--lime);color:var(--ink);grid-template-columns:1fr;place-items:center;text-align:center;flex-basis:min(40vw,520px)}
+.case.end h3{font-size:clamp(2rem,3.6vw,3.4rem);margin:0 0 26px}
+.cases-prog{display:flex;align-items:center;gap:16px;padding-top:4vh}
+.cases-prog .bar{flex:1;height:1px;background:rgba(241,237,228,.2);position:relative}
+.cases-prog .bar i{position:absolute;inset:0 auto 0 0;width:0;background:var(--lime)}
 
 /* partners */
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.member{border:1px solid var(--line);padding:46px 40px;position:relative;transition:all .6s var(--ease);background:linear-gradient(160deg,var(--navy-2),var(--navy))}
-.member:hover{border-color:var(--gold);transform:translateY(-6px)}
-.member .mono{width:84px;height:84px;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif-en);font-size:2rem;color:var(--gold);letter-spacing:.06em}
-.member h4{font-family:var(--serif-ko);color:var(--ivory);font-weight:400;font-size:1.4rem;margin-top:30px}
-.member .role{font-size:.8rem;letter-spacing:.14em;color:var(--gold);margin-top:4px}
-.member p{color:var(--muted);font-size:.9rem;margin-top:20px}
-.member .cred{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:.8rem;color:var(--text);line-height:1.9}
+.partners{padding-top:16vh;padding-bottom:12vh}
+.pt-list{margin-top:6vh}
+.pt{display:grid;grid-template-columns:80px 1.2fr 1fr 1.2fr;gap:30px;padding:30px 0;border-top:1px solid var(--line);align-items:baseline;transition:background .5s;position:relative}
+.pt:last-child{border-bottom:1px solid var(--line)}
+.pt::before{content:"";position:absolute;inset:0 calc(-1 * clamp(20px,3.2vw,56px));background:var(--ink);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);z-index:-1}
+.pt:hover{color:var(--paper)}
+.pt:hover::before{transform:none}
+.pt:hover .mono,.pt:hover .bg{color:rgba(241,237,228,.7)}
+.pt-list{isolation:isolate;position:relative}
+.pt h4{font-size:clamp(1.5rem,2.6vw,2.4rem);font-weight:600;letter-spacing:-.05em}
+.pt .mono{color:var(--mute)}
+.pt .bg{color:var(--ink-2);font-size:.95rem}
 
-/* cta band */
-.band{position:relative;padding:140px 0;text-align:center;overflow:hidden}
-.band-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=2000&q=80') center/cover fixed;filter:grayscale(.5)}
-.band::after{content:"";position:absolute;inset:0;background:rgba(11,19,31,.86)}
-.band .container{position:relative;z-index:2}
-.band h2{font-family:var(--serif-ko);font-weight:300;color:var(--ivory);font-size:clamp(2rem,4.4vw,3.6rem);line-height:1.35;letter-spacing:-.04em}
-.band h2 em{font-style:normal;color:var(--gold)}
-.band p{color:var(--muted);margin:24px auto 46px;max-width:520px}
+/* faq */
+.faq{padding-top:6vh;padding-bottom:16vh}
+.fq{border-top:1px solid var(--line)}
+.fq:last-child{border-bottom:1px solid var(--line)}
+.fq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 0;background:none;border:0;cursor:pointer;font:600 clamp(1.1rem,1.8vw,1.5rem)/1.3 var(--sans);letter-spacing:-.035em;color:var(--ink);text-align:left}
+.fq button i{font-style:normal;font-weight:300;font-size:1.6rem;transition:transform .5s var(--ease)}
+.fq.open button i{transform:rotate(45deg)}
+.fq .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.fq.open .a{grid-template-rows:1fr}
+.fq .a > div{overflow:hidden}
+.fq .a p{padding:0 0 30px;color:var(--ink-2);max-width:760px}
+.faq-grid{display:grid;grid-template-columns:1fr 2fr;gap:40px;border-top:1px solid var(--ink);padding-top:28px}
+.faq-grid h2{font-size:clamp(2.2rem,5vw,5.2rem);font-weight:650;letter-spacing:-.06em;line-height:.98}
 
 /* contact */
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:100px}
-.info-list{margin-top:50px;border-top:1px solid var(--line)}
-.info-list div{display:grid;grid-template-columns:120px 1fr;padding:22px 0;border-bottom:1px solid var(--line);font-size:.95rem}
-.info-list dt{color:var(--gold);font-size:.78rem;letter-spacing:.2em;padding-top:3px}
-.info-list dd{color:var(--ivory)}
-form.cform{display:grid;grid-template-columns:1fr 1fr;gap:34px 30px;border:1px solid var(--line);padding:56px 50px;background:var(--navy-2)}
-.field{display:flex;flex-direction:column;gap:10px}
-.field.full{grid-column:1/-1}
-.field label{font-size:.75rem;letter-spacing:.18em;color:var(--gold)}
-.field input,.field select,.field textarea{background:transparent;border:0;border-bottom:1px solid rgba(244,239,228,.2);color:var(--ivory);font-family:var(--sans);font-size:1rem;padding:10px 0;outline:none;transition:border-color .4s;font-weight:300;border-radius:0}
-.field select{appearance:none;cursor:pointer;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23d4af37' fill='none'/%3E%3C/svg%3E") right 4px center no-repeat}
-.field select option{background:var(--navy);color:var(--ivory)}
-.field textarea{resize:none;min-height:110px}
-.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--gold)}
-.field input::placeholder,.field textarea::placeholder{color:rgba(138,147,163,.6)}
-.agree{grid-column:1/-1;display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--muted);cursor:pointer}
-.agree input{accent-color:var(--gold);width:16px;height:16px}
-.form-foot{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.form-foot small{color:var(--muted);font-size:.8rem}
-.form-msg{grid-column:1/-1;display:none;text-align:center;padding:20px;border:1px solid var(--gold);color:var(--gold);font-size:.95rem}
-.form-msg.on{display:block}
+.contact{background:var(--ink);color:var(--paper);padding:16vh 0 0;border-radius:32px 32px 0 0}
+.contact .mono{opacity:.6}
+.talk{font-size:clamp(4rem,15vw,17rem);font-weight:650;letter-spacing:-.075em;line-height:.85;margin:4vh 0 8vh;display:flex;align-items:center;gap:2vw;flex-wrap:wrap}
+.talk .ball{width:clamp(70px,11vw,170px);height:clamp(70px,11vw,170px);border-radius:50%;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-size:clamp(1.6rem,4vw,4rem);font-weight:300;transition:transform .6s var(--ease)}
+.talk:hover .ball{transform:rotate(-45deg)}
+.c-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:6vw;padding-bottom:14vh;border-top:1px solid rgba(241,237,228,.18);padding-top:50px}
+.c-info dl > div{padding:18px 0;border-bottom:1px solid rgba(241,237,228,.12)}
+.c-info dt{opacity:.55;margin-bottom:6px}
+.c-info dd{font-size:1.15rem;font-weight:500;letter-spacing:-.02em}
+.c-info dd a{border-bottom:1px solid rgba(241,237,228,.3)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.in{position:relative}
+.in.full{grid-column:1/-1}
+.in input,.in textarea{width:100%;background:rgba(241,237,228,.05);border:1px solid rgba(241,237,228,.14);border-radius:14px;padding:26px 18px 12px;color:var(--paper);font:400 1rem var(--sans);outline:none;transition:border-color .3s,background .3s;resize:none}
+.in textarea{min-height:140px}
+.in input:focus,.in textarea:focus{border-color:var(--lime);background:rgba(241,237,228,.08)}
+.in label{position:absolute;left:18px;top:19px;color:rgba(241,237,228,.5);font-size:.95rem;pointer-events:none;transition:all .3s var(--ease)}
+.in input:focus + label,.in input:not(:placeholder-shown) + label,.in textarea:focus + label,.in textarea:not(:placeholder-shown) + label{top:9px;font-size:.7rem;color:var(--lime);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.chips{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+.chips p{width:100%;opacity:.55;margin-bottom:4px}
+.chips input{display:none}
+.chips label{padding:10px 18px;border-radius:999px;border:1px solid rgba(241,237,228,.2);font-size:.9rem;cursor:pointer;transition:all .3s}
+.chips input:checked + label{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+form .pill{grid-column:1/-1;justify-self:start;background:var(--lime);color:var(--ink);border-color:var(--lime);margin-top:10px}
+form .pill::before{background:var(--paper)}
+form .pill:hover{color:var(--ink)}
+.done{grid-column:1/-1;display:none;padding:18px;border-radius:14px;background:rgba(216,232,108,.12);color:var(--lime)}
+.done.on{display:block}
 
-/* footer */
-footer{border-top:1px solid var(--line);padding:80px 0 40px;background:#080e18}
-.foot-top{display:flex;justify-content:space-between;gap:60px;flex-wrap:wrap;padding-bottom:60px;border-bottom:1px solid var(--line)}
-.foot-top p{color:var(--muted);font-size:.88rem;max-width:340px;margin-top:22px}
-.foot-cols{display:flex;gap:90px;flex-wrap:wrap}
-.foot-cols h5{color:var(--gold);font-size:.75rem;letter-spacing:.24em;font-weight:500;margin-bottom:20px}
-.foot-cols a{display:block;color:var(--text);font-size:.9rem;padding:5px 0;transition:color .3s}
-.foot-cols a:hover{color:var(--gold)}
-.foot-bot{display:flex;justify-content:space-between;padding-top:34px;font-size:.78rem;color:var(--muted);flex-wrap:wrap;gap:12px}
+footer{background:var(--ink);color:var(--paper);overflow:hidden}
+.ft{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:30px 0;border-top:1px solid rgba(241,237,228,.18);opacity:.65}
+.ft a:hover{color:var(--lime)}
+.wordmark{font-size:25.5vw;font-weight:750;letter-spacing:-.085em;line-height:.74;white-space:nowrap;margin-left:-.06em;padding-bottom:1vw;color:var(--paper)}
+.wordmark sup{font-size:.2em;font-weight:500;vertical-align:top}
+
+
+/* ===== upgrade ===== */
+.prog{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--lime);transform-origin:left;transform:scaleX(0);z-index:70;pointer-events:none}
+.loader{position:fixed;inset:0;z-index:2000;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:space-between;padding:28px clamp(20px,3.2vw,56px);transition:transform 1.1s cubic-bezier(.76,0,.24,1)}
+.loader.out{transform:translateY(-100%)}
+.loader .lt{display:flex;justify-content:space-between;opacity:.6}
+.loader .lw{overflow:hidden}
+.loader .lw span{display:block;font-size:clamp(4rem,17vw,19rem);font-weight:720;letter-spacing:-.08em;line-height:.85;transform:translateY(105%);animation:up 1.1s .1s var(--ease) forwards}
+.loader .lb{display:flex;justify-content:space-between;align-items:end}
+.loader .lc{font-family:var(--mono);font-size:clamp(2.4rem,6vw,5rem);line-height:1;color:var(--lime)}
+.loader .lbar{position:absolute;left:0;bottom:0;height:3px;background:var(--lime);width:0}
+body.loading{overflow:hidden}
+.cur,.cur-r{position:fixed;top:0;left:0;pointer-events:none;z-index:1500;border-radius:50%;transform:translate(-50%,-50%)}
+.cur{width:6px;height:6px;background:var(--ink)}
+.cur-r{width:38px;height:38px;border:1px solid rgba(17,17,17,.35);display:grid;place-items:center;transition:width .4s var(--ease),height .4s var(--ease),background .4s,border-color .4s}
+.cur-r b{font:500 .62rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);opacity:0;transition:opacity .3s;white-space:nowrap}
+.cur-r.hov{width:64px;height:64px;border-color:var(--ink)}
+.cur-r.lab{width:92px;height:92px;background:var(--lime);border-color:var(--lime)}
+.cur-r.lab b{opacity:1}
+.cur-r.on-dark{border-color:rgba(241,237,228,.45)}
+.cur.on-dark{background:var(--paper)}
+@media (hover:none),(pointer:coarse){.cur,.cur-r{display:none}}
+.clients{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;overflow:hidden;display:flex;align-items:center;gap:40px}
+.clients .cl-lab{flex:0 0 auto;padding-left:clamp(20px,3.2vw,56px);color:var(--mute);line-height:1.5}
+.cl-track{display:flex;gap:70px;align-items:center;width:max-content;animation:mq 38s linear infinite}
+.clients:hover .cl-track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.cl-mask{overflow:hidden;flex:1;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.lg{font-size:1.5rem;color:var(--ink);opacity:.55;white-space:nowrap;transition:opacity .3s}
+.lg:hover{opacity:1}
+.lg.a{font-weight:800;letter-spacing:-.06em}
+.lg.b{font-family:Georgia,serif;font-style:italic;letter-spacing:-.02em}
+.lg.c{font-family:var(--mono);font-size:1.15rem;letter-spacing:.12em}
+.lg.d{font-weight:300;letter-spacing:.32em;font-size:1.1rem}
+.lg.e{font-weight:650;letter-spacing:-.03em}
+.lg.e i{font-style:normal;color:var(--green)}
+.pt .av{display:none;width:64px;height:64px;border-radius:50%;object-fit:cover;filter:grayscale(1)}
+.pt-float{position:fixed;top:0;left:0;width:200px;height:250px;border-radius:14px;overflow:hidden;pointer-events:none;z-index:45;opacity:0;transform:translate(-50%,-50%) scale(.8);transition:opacity .35s,transform .5s var(--ease)}
+.pt-float.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.pt-float img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);opacity:0;transition:opacity .3s}
+.pt-float img.on{opacity:1}
+.insights{padding-top:4vh;padding-bottom:14vh}
+.ins-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px;margin-top:6vh}
+.ins{display:block}
+.ins .im{border-radius:16px;overflow:hidden;aspect-ratio:4/3;position:relative}
+.ins .im img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.ins:hover .im img{transform:scale(1.06)}
+.ins .im .cat{position:absolute;left:14px;top:14px;background:var(--paper);padding:6px 12px;border-radius:999px}
+.ins .meta{display:flex;justify-content:space-between;margin-top:18px;color:var(--mute)}
+.ins h3{font-size:clamp(1.15rem,1.6vw,1.5rem);font-weight:620;letter-spacing:-.04em;line-height:1.35;margin-top:10px;word-break:keep-all}
+.ins h3 span{background:linear-gradient(var(--ink),var(--ink)) 0 100%/0 1px no-repeat;transition:background-size .6s var(--ease)}
+.ins:hover h3 span{background-size:100% 1px}
+.ins .rd{display:inline-flex;gap:8px;margin-top:14px;font-weight:600;font-size:.9rem}
+.ft-social{display:flex;gap:22px}
+.hd nav a.act::after{transform:scaleX(1)}
+.pill.busy{pointer-events:none;opacity:.7}
+.mag{will-change:transform}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .loader{display:none}
+}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(40px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.rv{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1.2s var(--ease)}
 .rv.in{opacity:1;transform:none}
-.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
 
-/* responsive */
-@media(max-width:1100px){
-  .svc-grid{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr);row-gap:60px}
-  .steps::before{display:none}
+@media(max-width:960px){
+  .hd{grid-template-columns:1fr auto}
+  .hd nav,.clock,.hd-cta{display:none}
+  .menu-btn{display:block}
+  .hero-meta{grid-template-columns:1fr 1fr;row-gap:22px}
+  .hero h1 .ind{padding-left:8vw}
+  .hero-film{position:relative;top:0;width:100%;aspect-ratio:4/3;margin-top:5vh}
+  .hero-foot{grid-template-columns:1fr}
+  .hero-foot .act{justify-content:flex-start;flex-wrap:wrap}
+  .sh,.faq-grid,.proc-grid,.c-grid,.st-grid,.principles{grid-template-columns:1fr}
+  .st-photo{max-width:none;aspect-ratio:4/3}
+  .principles{margin-top:44px}
+  .svc-row{grid-template-columns:44px 1fr 36px;gap:16px}
+  .svc-row p{grid-column:2/3}
+  .svc-row .pl{grid-row:1;grid-column:3}
+  .svc-detail{grid-column:2/-1}
+  .float-img{display:none}
+  .nums{grid-template-columns:1fr 1fr}
+  .num:nth-child(2){border-right:0}
+  .num:nth-child(3){padding-left:0}
+  .num:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .proc-left{position:relative;top:0}
+  .step{min-height:auto;opacity:1;grid-template-columns:1fr;gap:24px}
+  .step-tx{grid-column:1}
+  .cases-h{height:auto}
+  .cases-stick{position:relative;height:auto;padding:14vh 0}
+  .track{flex-direction:column;transform:none!important;padding-right:clamp(20px,3.2vw,56px)}
+  .case{flex-basis:auto;height:auto;grid-template-columns:1fr}
+  .case .ph{aspect-ratio:16/10}
+  .case.end{padding:50px 20px}
+  .cases-prog{display:none}
+  .pt{grid-template-columns:64px 1fr;gap:4px 18px;align-items:center;padding:22px 0}
+  .pt > .mono:first-child{display:none}
+  .pt .av{display:block;grid-row:1/4}
+  .pt h4,.pt .mono,.pt .bg{grid-column:2}
+  .pt .bg{font-size:.85rem}
+  .pt-float{display:none}
+  .clients{flex-direction:column;align-items:stretch;gap:14px;padding:22px 0}
+  .clients .cl-lab br{display:none}
+  .lg{font-size:1.25rem}
+  .ins-grid{grid-template-columns:1fr}
+  .reveal-img{height:auto}
+  .reveal-img .sticky{position:relative;height:70vh}
+  .reveal-img .frame{clip-path:none!important}
+  .reveal-img .cap{opacity:1}
 }
-@media(max-width:900px){
-  .menu,.nav .btn{display:none}
-  .burger{display:block;z-index:101}
-  .pad{padding:100px 0}
-  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:60px}
-  .about-img{max-width:480px}
-  .about-img .badge{right:-10px}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:0}
-  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .cases-grid,.team-grid{grid-template-columns:1fr}
-  .case{aspect-ratio:4/3}
-  .case .result{max-height:140px;opacity:1}
-  .band-bg{background-attachment:scroll}
-}
-@media(max-width:600px){
-  .svc-grid,.steps{grid-template-columns:1fr}
-  .svc{min-height:auto}
-  form.cform{grid-template-columns:1fr;padding:40px 26px}
-  .info-list div{grid-template-columns:90px 1fr}
-  .stat{padding:50px 16px}
-  .hero-card .row b{font-size:1.7rem}
+@media(max-width:560px){
+  form{grid-template-columns:1fr}
+  .reveal-img .cap{flex-direction:column;gap:12px}
 }
 </style>
 </head>
 <body>
+<div class="grain"></div>
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="lt mono"><span>Meridian Consulting Inc.</span><span>Seoul — Est. 2009</span></div>
+  <div class="lw"><span>Meridian®</span></div>
+  <div class="lb"><span class="mono" style="opacity:.6">Strategy · Organization · Digital · M&amp;A</span><span class="lc" id="lc">000</span></div>
+  <i class="lbar" id="lbar"></i>
+</div>
+<div class="prog" id="prog"></div>
+<div class="cur" id="cur"></div><div class="cur-r" id="curR"><b id="curL">View</b></div>
 
 <header id="hdr">
-  <div class="container nav">
-    <a href="#top" class="logo">
-      <div class="logo-mark"><i></i></div>
-      <div class="logo-text">MERIDIAN<small>STRATEGY CONSULTING</small></div>
-    </a>
-    <nav class="menu">
-      <a href="#about">About</a>
+  <div class="wrap hd">
+    <a href="#top" class="brand">Meridian<sup>®</sup></a>
+    <nav>
       <a href="#services">Services</a>
-      <a href="#approach">Approach</a>
+      <a href="#process">Process</a>
       <a href="#cases">Cases</a>
-      <a href="#team">Partners</a>
+      <a href="#partners">Partners</a>
+      <a href="#insights">Insights</a>
     </nav>
-    <a href="#contact" class="btn btn-gold">상담 신청 <span class="arr">→</span></a>
-    <button class="burger" id="burger" aria-label="메뉴"><span></span><span></span><span></span></button>
+    <div class="hd-r">
+      <span class="mono clock" id="clock">SEOUL 00:00</span>
+      <a href="#contact" class="hd-cta">Contact ↗</a>
+      <button class="menu-btn" id="mOpen">Menu</button>
+    </div>
   </div>
 </header>
 
-<div class="mobile-menu" id="mmenu">
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#approach">Approach</a>
-  <a href="#cases">Cases</a>
-  <a href="#team">Partners</a>
-  <a href="#contact" class="btn btn-gold" style="font-family:var(--sans);font-size:.95rem">상담 신청 →</a>
+<div class="ov" id="ov">
+  <div class="ov-top"><span class="brand">Meridian<sup>®</sup></span><button id="mClose">Close ✕</button></div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#cases">Cases</a>
+    <a href="#partners">Partners</a>
+    <a href="#insights">Insights</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <span class="mono">contact@meridian-consulting.kr</span>
 </div>
 
 <!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-bg"></div>
-  <canvas id="stars"></canvas>
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Strategy &amp; Advisory Since 2009</span>
-        <h1>
-          <span class="line"><span>결정의 순간,</span></span>
-          <span class="line"><span>가장 <span class="gold">정확한 방향</span>을</span></span>
-          <span class="line"><span>제시합니다.</span></span>
-        </h1>
-        <p class="hero-sub">메리디안은 경영 전략부터 조직 설계, 디지털 전환, M&amp;A 자문까지. 데이터와 경험으로 기업의 다음 15년을 함께 설계하는 프리미엄 전략 컨설팅 파트너입니다.</p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-gold">무료 진단 상담 <span class="arr">→</span></a>
-          <a href="#services" class="btn btn-line">서비스 보기</a>
-        </div>
-      </div>
-      <aside class="hero-card">
-        <div class="label">OUR PROMISE</div>
-        <p class="quote">"보고서가 아닌 실행 가능한 결론을 드립니다. 성과가 증명될 때까지 곁에 있겠습니다."</p>
-        <div class="row">
-          <div><b>320+</b><small>수행 프로젝트</small></div>
-          <div><b>94%</b><small>재의뢰율</small></div>
-          <div><b>17</b><small>시니어 파트너</small></div>
-        </div>
-      </aside>
-    </div>
+<section class="hero wrap" id="top">
+  <div class="hero-meta mono">
+    <div>(Est.)<b>2009, Seoul</b></div>
+    <div>(Practice)<b>Strategy · Organization</b></div>
+    <div>(Practice)<b>Digital · M&amp;A</b></div>
+    <div>(Status)<b>2027 상반기 프로젝트 예약 중</b></div>
   </div>
-  <div class="scroll-ind">SCROLL<i></i></div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span>FINANCE</span><span>HEALTHCARE</span><span>MANUFACTURING</span><span>RETAIL</span><span>HOSPITALITY</span><span>TECHNOLOGY</span><span>REAL ESTATE</span><span>PUBLIC SECTOR</span>
-    <span>FINANCE</span><span>HEALTHCARE</span><span>MANUFACTURING</span><span>RETAIL</span><span>HOSPITALITY</span><span>TECHNOLOGY</span><span>REAL ESTATE</span><span>PUBLIC SECTOR</span>
+  <div class="hero-stage">
+  <h1>
+    <span class="r"><span>다음 결정을</span></span>
+    <span class="r ind"><span><span class="thin">함께</span> 설계</span></span>
+    <span class="r"><span>합니다<span class="dot">.</span></span></span>
+  </h1>
+  <div class="hero-film">
+    <video autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg"><source src="hero.mp4" type="video/mp4"></video>
+    <div class="fcap mono"><span class="rec">Strategy Session</span><span>Seoul</span></div>
   </div>
-</div>
-
-<!-- ABOUT -->
-<section class="pad" id="about">
-  <div class="container about-grid">
-    <div class="about-img rv">
-      <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80" alt="메리디안 파트너">
-      <div class="badge"><b>15</b><small>YEARS OF<br>EXCELLENCE</small></div>
-    </div>
-    <div class="about-text">
-      <span class="eyebrow rv">About Meridian</span>
-      <h2 class="h-sec rv d1">복잡한 문제일수록<br><em>단순하고 명확한 해답</em>으로.</h2>
-      <p class="rv d2">자오선(Meridian)은 위치와 방향을 정하는 기준선입니다. 메리디안 컨설팅은 이름처럼, 불확실한 환경 속에서 기업이 흔들리지 않는 기준을 세우도록 돕습니다.</p>
-      <p class="rv d2">맥킨지·BCG·삼일PwC 출신 시니어 파트너들이 프로젝트 첫날부터 마지막 날까지 직접 참여합니다. 주니어에게 위임하지 않는 1:1 파트너 책임제가 메리디안의 원칙입니다.</p>
-      <div class="about-sign rv d3">
-        <span class="sig">J. Han</span>
-        <small><b>한정우</b><br>Founder &amp; Managing Partner</small>
-      </div>
+  </div>
+  <div class="hero-foot">
+    <p>메리디안은 복잡한 경영 과제를 명확한 실행 계획으로 바꾸는 독립 전략 컨설팅 펌입니다. 보고서가 아니라 결과를 납품합니다.</p>
+    <div class="act">
+      <a href="#contact" class="pill solid mag">무료 진단 신청 <span class="ar">→</span></a>
+      <a href="#services" class="pill">서비스 <span class="ar">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="container stats-grid">
-    <div class="stat rv"><b><span class="count" data-to="320">0</span><sup>+</sup></b><p>누적 프로젝트</p></div>
-    <div class="stat rv d1"><b><span class="count" data-to="94">0</span><sup>%</sup></b><p>고객 재의뢰율</p></div>
-    <div class="stat rv d2"><b><span class="count" data-to="2.8" data-dec="1">0</span><sup>x</sup></b><p>평균 ROI 개선</p></div>
-    <div class="stat rv d3"><b><span class="count" data-to="48">0</span></b><p>상장사 고객</p></div>
+<!-- CLIENTS -->
+<section class="clients" aria-label="주요 고객사">
+  <span class="cl-lab mono">Trusted by <br>48 listed companies</span>
+  <div class="cl-mask"><div class="cl-track"><span class="lg a">HANSOL</span><span class="lg b">Daewon Holdings</span><span class="lg c">K-LOGIS</span><span class="lg d">SEORIN</span><span class="lg e">Mirae<i>Bio</i></span><span class="lg a">NOVATEK</span><span class="lg b">Arden Medical</span><span class="lg c">PRIMEFIN</span><span class="lg d">HAEON</span><span class="lg e">Uri<i>Retail</i></span><span class="lg a">HANSOL</span><span class="lg b">Daewon Holdings</span><span class="lg c">K-LOGIS</span><span class="lg d">SEORIN</span><span class="lg e">Mirae<i>Bio</i></span><span class="lg a">NOVATEK</span><span class="lg b">Arden Medical</span><span class="lg c">PRIMEFIN</span><span class="lg d">HAEON</span><span class="lg e">Uri<i>Retail</i></span></div></div>
+</section>
+
+<!-- EXPANDING IMAGE -->
+<section class="reveal-img" id="rimg">
+  <div class="sticky">
+    <div class="frame" id="frame">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2200&q=80" alt="메리디안 오피스" id="rimgImg">
+      <div class="cap mono" id="cap"><div>Office<b>서울 · 세종대로</b></div><div>Team<b>42 Consultants</b></div><div>Clients<b>48 Listed Co.</b></div></div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement wrap">
+  <div class="st-grid">
+    <aside class="st-side rv">
+      <span class="mono">(01) — Our Belief</span>
+      <div class="st-photo"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&q=80" alt="메리디안 대표 파트너"></div>
+      <div class="st-sign"><b>한정우</b><span class="mono">Founder · Managing Partner</span></div>
+    </aside>
+    <div class="st-main">
+      <h2 class="st-head rv">좋은 전략은<br><span>길지 않습니다.</span></h2>
+      <p id="stmt">우리는 수백 장의 슬라이드 대신 <span class="hl">한 장의 명확한 결론</span>을 드립니다. 그리고 그 결론이 현장에서 숫자로 증명될 때까지 고객 곁에 남습니다.</p>
+      <div class="principles">
+        <div class="pr rv"><span class="mono">Principle 01</span><h4>한 장의 결론</h4><p>모든 보고는 경영진이 5분 안에 판단할 수 있는 한 장으로 정리합니다.</p></div>
+        <div class="pr rv"><span class="mono">Principle 02</span><h4>파트너 직접 책임</h4><p>시니어 파트너가 첫 미팅부터 마지막 리뷰까지 직접 참여합니다.</p></div>
+        <div class="pr rv"><span class="mono">Principle 03</span><h4>숫자로 증명</h4><p>프로젝트 시작 전 KPI를 합의하고, 결과는 숫자로 보고합니다.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICES -->
-<section class="pad" id="services">
-  <div class="container">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow rv">Our Services</span>
-        <h2 class="h-sec rv d1">기업의 모든 전환점에<br><em>메리디안</em>이 있습니다.</h2>
-      </div>
-      <p class="lead rv d2">진단에서 실행까지 하나의 팀이 책임집니다. 각 영역의 전문 파트너가 기업의 상황에 맞춘 맞춤형 솔루션을 설계합니다.</p>
+<section class="services wrap" id="services">
+  <div class="sh">
+    <span class="mono">(02) — Services</span>
+    <h2 class="rv">네 가지 영역,<br>하나의 책임.</h2>
+  </div>
+  <div class="svc-list" id="svcList">
+    <div class="svc-row" data-img="0">
+      <span class="mono n">S/01</span>
+      <h3>경영 전략</h3>
+      <p>시장과 경쟁 구도를 재해석해 3~5년 성장 경로와 사업 포트폴리오를 다시 그립니다.</p>
+      <span class="pl">+</span>
+      <div class="svc-detail"><div><div class="tags"><span>중장기 비전 수립</span><span>신사업 타당성 검토</span><span>포트폴리오 재편</span><span>가격 전략</span></div></div></div>
     </div>
-    <div class="svc-grid">
-      <article class="svc rv">
-        <span class="num">01</span>
-        <svg class="ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1"><circle cx="27" cy="27" r="22"/><circle cx="27" cy="27" r="12"/><circle cx="27" cy="27" r="3" fill="currentColor"/><path d="M27 1v10M27 43v10M1 27h10M43 27h10"/></svg>
-        <h3>경영 전략</h3>
-        <div class="en">Corporate Strategy</div>
-        <p>시장 구조와 경쟁 환경을 정밀 분석해 중장기 성장 로드맵과 포트폴리오 전략을 수립합니다.</p>
-        <ul><li>중장기 비전·성장 전략</li><li>신사업 타당성 검토</li><li>사업 포트폴리오 재편</li></ul>
-      </article>
-      <article class="svc rv d1">
-        <span class="num">02</span>
-        <svg class="ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1"><rect x="20" y="3" width="14" height="12"/><rect x="3" y="39" width="14" height="12"/><rect x="20" y="39" width="14" height="12"/><rect x="37" y="39" width="14" height="12"/><path d="M27 15v12M10 39V27h34v12M27 27v12"/></svg>
-        <h3>조직·인사 혁신</h3>
-        <div class="en">Organization &amp; People</div>
-        <p>전략을 실행할 수 있는 조직 구조와 성과 체계를 설계하고, 리더십의 변화를 이끌어냅니다.</p>
-        <ul><li>조직 구조 재설계</li><li>성과·보상 체계 개편</li><li>리더십 코칭</li></ul>
-      </article>
-      <article class="svc rv d2">
-        <span class="num">03</span>
-        <svg class="ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 45l13-15 10 8 14-20 11 9"/><path d="M40 18h11v11"/><path d="M3 51h48"/></svg>
-        <h3>디지털 전환</h3>
-        <div class="en">Digital Transformation</div>
-        <p>데이터와 AI를 비즈니스 언어로 번역합니다. 기술 도입이 아닌 수익 구조의 변화를 목표로 합니다.</p>
-        <ul><li>DX 전략·로드맵</li><li>데이터 기반 의사결정 체계</li><li>AI 업무 혁신 PoC</li></ul>
-      </article>
-      <article class="svc rv d3">
-        <span class="num">04</span>
-        <svg class="ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1"><circle cx="19" cy="27" r="15"/><circle cx="35" cy="27" r="15"/><path d="M27 14.5v25"/></svg>
-        <h3>M&amp;A · 투자 자문</h3>
-        <div class="en">M&amp;A Advisory</div>
-        <p>인수 대상 발굴부터 실사, 가치 평가, 인수 후 통합(PMI)까지 거래의 전 과정을 자문합니다.</p>
-        <ul><li>타깃 발굴·스크리닝</li><li>재무·상업 실사</li><li>PMI 통합 관리</li></ul>
-      </article>
+    <div class="svc-row" data-img="1">
+      <span class="mono n">S/02</span>
+      <h3>조직 · 인사</h3>
+      <p>전략이 실제로 굴러가는 조직 구조와 성과 체계, 리더십을 설계합니다.</p>
+      <span class="pl">+</span>
+      <div class="svc-detail"><div><div class="tags"><span>조직 구조 재설계</span><span>성과·보상 체계</span><span>리더십 코칭</span><span>조직문화 진단</span></div></div></div>
+    </div>
+    <div class="svc-row" data-img="2">
+      <span class="mono n">S/03</span>
+      <h3>디지털 전환</h3>
+      <p>기술 도입이 아닌 수익 구조의 변화. 데이터와 AI를 비즈니스 언어로 번역합니다.</p>
+      <span class="pl">+</span>
+      <div class="svc-detail"><div><div class="tags"><span>DX 로드맵</span><span>데이터 의사결정 체계</span><span>AI 업무 혁신 PoC</span><span>IT 투자 최적화</span></div></div></div>
+    </div>
+    <div class="svc-row" data-img="3">
+      <span class="mono n">S/04</span>
+      <h3>M&amp;A · 투자</h3>
+      <p>타깃 발굴부터 실사, 가치 평가, 인수 후 통합(PMI)까지 거래 전 과정을 자문합니다.</p>
+      <span class="pl">+</span>
+      <div class="svc-detail"><div><div class="tags"><span>타깃 스크리닝</span><span>재무·상업 실사</span><span>밸류에이션</span><span>PMI 100일 플랜</span></div></div></div>
+    </div>
+  </div>
+</section>
+<div class="float-img" id="floatImg">
+  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80" alt="">
+  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&q=80" alt="">
+  <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=700&q=80" alt="">
+  <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80" alt="">
+</div>
+
+<!-- NUMBERS -->
+<section class="wrap">
+  <div class="nums">
+    <div class="num rv"><span class="mono">(Projects)</span><b><span class="cnt" data-to="320">0</span><em>+</em></b><p>15년간 수행한 프로젝트</p></div>
+    <div class="num rv"><span class="mono">(Retention)</span><b><span class="cnt" data-to="94">0</span><em>%</em></b><p>고객 재의뢰율</p></div>
+    <div class="num rv"><span class="mono">(Avg. ROI)</span><b><span class="cnt" data-to="2.8" data-d="1">0</span><em>×</em></b><p>컨설팅 비용 대비 평균 성과</p></div>
+    <div class="num rv"><span class="mono">(Partners)</span><b><span class="cnt" data-to="17">0</span></b><p>평균 경력 18년 시니어 파트너</p></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process wrap" id="process">
+  <div class="sh">
+    <span class="mono">(03) — Process</span>
+    <h2 class="rv">16주, 네 단계로<br>끝까지 갑니다.</h2>
+  </div>
+  <div class="proc-grid">
+    <div class="proc-left">
+      <div class="big"><span id="procNum">01</span></div>
+      <p>모든 프로젝트는 동일한 원칙으로 움직입니다. 매주 진척을 공유하고, 각 단계의 산출물은 경영진의 의사결정으로 이어집니다.</p>
+      <div class="proc-bar"><i id="procBar"></i></div>
+    </div>
+    <div class="proc-right">
+      <div class="step" data-i="01"><div class="step-ph"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="데이터 진단"></div><div class="step-tx"><span class="mono">Week 01 — 03</span><h3>진단</h3><p>경영진 인터뷰와 데이터 분석으로 문제의 본질을 정의합니다. 증상이 아니라 원인을 찾는 단계입니다.</p><ul><li>경영진 인터뷰</li><li>데이터 진단</li><li>이슈 트리</li></ul></div></div>
+      <div class="step" data-i="02"><div class="step-ph"><img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1200&q=80" alt="전략 설계"></div><div class="step-tx"><span class="mono">Week 04 — 07</span><h3>설계</h3><p>복수의 시나리오를 만들고 기대 효과와 리스크를 정량화합니다. 경영진과 함께 최적안을 선택합니다.</p><ul><li>시나리오 플래닝</li><li>재무 임팩트 모델</li><li>의사결정 워크숍</li></ul></div></div>
+      <div class="step" data-i="03"><div class="step-ph"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80" alt="현장 실행"></div><div class="step-tx"><span class="mono">Week 08 — 16</span><h3>실행</h3><p>현업 조직과 한 팀이 되어 과제를 직접 실행합니다. PMO를 운영하며 주간 단위로 성과를 공유합니다.</p><ul><li>PMO 운영</li><li>Quick-win 과제</li><li>주간 리포트</li></ul></div></div>
+      <div class="step" data-i="04"><div class="step-ph"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80" alt="장기 파트너십"></div><div class="step-tx"><span class="mono">+ 6 Months</span><h3>정착</h3><p>변화가 조직의 습관이 될 때까지 KPI를 모니터링합니다. 사후 관리 6개월은 무상으로 제공합니다.</p><ul><li>KPI 대시보드</li><li>분기 리뷰</li><li>무상 사후관리</li></ul></div></div>
     </div>
   </div>
 </section>
 
-<!-- APPROACH -->
-<section class="pad approach" id="approach">
-  <div class="container">
-    <span class="eyebrow rv">Our Approach</span>
-    <h2 class="h-sec rv d1">검증된 4단계 방법론,<br><em>결과로 증명합니다.</em></h2>
-    <div class="steps">
-      <div class="step rv"><div class="dot">I</div><h4>진단</h4><div class="wk">DIAGNOSE · 2~3 WEEKS</div><p>경영진 인터뷰와 데이터 분석으로 문제의 본질을 정의합니다. 증상이 아닌 원인을 찾습니다.</p></div>
-      <div class="step rv d1"><div class="dot">II</div><h4>설계</h4><div class="wk">DESIGN · 3~4 WEEKS</div><p>복수의 전략 시나리오를 도출하고 기대 효과와 리스크를 정량화해 최적안을 함께 선택합니다.</p></div>
-      <div class="step rv d2"><div class="dot">III</div><h4>실행</h4><div class="wk">EXECUTE · 8~12 WEEKS</div><p>현업 조직과 한 팀이 되어 과제를 실행합니다. 주간 단위로 진척과 성과를 공유합니다.</p></div>
-      <div class="step rv d3"><div class="dot">IV</div><h4>정착</h4><div class="wk">SUSTAIN · ONGOING</div><p>변화가 조직의 습관이 될 때까지 KPI 모니터링과 사후 관리를 6개월간 무상 제공합니다.</p></div>
+<!-- CASES (horizontal) -->
+<section class="cases" id="cases">
+  <div class="cases-h" id="casesH">
+    <div class="cases-stick">
+      <div class="wrap cases-top">
+        <h2>결과로<br><span>말합니다.</span></h2>
+        <span class="mono">(04) — Selected Cases · 고객사 보안상 사명 비공개</span>
+      </div>
+      <div class="track" id="track">
+        <article class="case">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1200&q=80" alt=""></div>
+          <div class="tx"><div><span class="mono">C/01 · Manufacturing · 2025</span><h3>중견 제조사 A사<br>원가 구조 혁신</h3></div><div class="kpi"><div><b>−23%</b><small>운영 원가</small></div><div><b>+410억</b><small>연간 영업이익</small></div></div></div>
+        </article>
+        <article class="case">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80" alt=""></div>
+          <div class="tx"><div><span class="mono">C/02 · Healthcare · 2024</span><h3>B의료원<br>조직 재설계 · 성과 체계</h3></div><div class="kpi"><div><b>+38%</b><small>환자 만족도</small></div><div><b>−31%</b><small>핵심 인력 이직률</small></div></div></div>
+        </article>
+        <article class="case">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80" alt=""></div>
+          <div class="tx"><div><span class="mono">C/03 · Retail · M&amp;A · 2024</span><h3>유통 그룹 C사<br>온라인 플랫폼 인수 · PMI</h3></div><div class="kpi"><div><b>3.2×</b><small>온라인 매출</small></div><div><b>9개월</b><small>통합 완료</small></div></div></div>
+        </article>
+        <article class="case">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80" alt=""></div>
+          <div class="tx"><div><span class="mono">C/04 · Finance · DX · 2023</span><h3>금융 D사<br>데이터 기반 심사 체계 구축</h3></div><div class="kpi"><div><b>−62%</b><small>심사 소요 시간</small></div><div><b>+17%</b><small>승인 정확도</small></div></div></div>
+        </article>
+        <article class="case end">
+          <div><h3>다음 사례는<br>귀사의 이야기.</h3><a href="#contact" class="pill solid">프로젝트 문의 <span class="ar">→</span></a></div>
+        </article>
+      </div>
+      <div class="wrap cases-prog"><span class="mono" id="cIdx">01 / 05</span><div class="bar"><i id="cBar"></i></div><span class="mono">Scroll →</span></div>
     </div>
   </div>
 </section>
 
-<!-- CASES -->
-<section class="pad" id="cases">
-  <div class="container">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow rv">Selected Cases</span>
-        <h2 class="h-sec rv d1">숫자로 말하는<br><em>프로젝트 성과</em></h2>
-      </div>
-      <p class="lead rv d2">고객사 보안 규정에 따라 사명은 비공개로 소개합니다. 상세 레퍼런스는 상담 시 안내해 드립니다.</p>
-    </div>
-    <div class="cases-grid">
-      <article class="case rv">
-        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1000&q=80" alt="">
-        <div class="case-body">
-          <span class="tag">MANUFACTURING</span>
-          <h3>중견 제조사 A사<br>원가 구조 혁신 프로젝트</h3>
-          <div class="result"><div><b>-23%</b><small>운영 원가</small></div><div><b>+410억</b><small>연간 영업이익</small></div></div>
-        </div>
-      </article>
-      <article class="case rv d1">
-        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&q=80" alt="">
-        <div class="case-body">
-          <span class="tag">HEALTHCARE</span>
-          <h3>대학병원 B의료원<br>조직 재설계 및 성과 체계 구축</h3>
-          <div class="result"><div><b>+38%</b><small>외래 환자 만족도</small></div><div><b>-31%</b><small>핵심 인력 이직률</small></div></div>
-        </div>
-      </article>
-      <article class="case rv d2">
-        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1000&q=80" alt="">
-        <div class="case-body">
-          <span class="tag">RETAIL · M&amp;A</span>
-          <h3>유통 그룹 C사<br>온라인 플랫폼 인수 및 PMI</h3>
-          <div class="result"><div><b>3.2x</b><small>온라인 매출 성장</small></div><div><b>9개월</b><small>통합 완료</small></div></div>
-        </div>
-      </article>
-    </div>
+<!-- PARTNERS -->
+<section class="partners wrap" id="partners">
+  <div class="sh">
+    <span class="mono">(05) — Partners</span>
+    <h2 class="rv">위임하지 않는<br>파트너들.</h2>
+  </div>
+  <div class="pt-list">
+    <div class="pt" data-p="0"><span class="mono">P/01</span><img class="av" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=160&h=160&fit=crop&q=70" alt="" loading="lazy"><h4>한정우</h4><span class="mono">Founder · Managing Partner</span><span class="bg">前 McKinsey 서울사무소 파트너 · Wharton MBA</span></div>
+    <div class="pt" data-p="1"><span class="mono">P/02</span><img class="av" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&h=160&fit=crop&q=70" alt="" loading="lazy"><h4>윤서연</h4><span class="mono">Partner · Organization</span><span class="bg">前 BCG 프린시펄 · 서울대 경영학 박사</span></div>
+    <div class="pt" data-p="2"><span class="mono">P/03</span><img class="av" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=160&h=160&fit=crop&q=70" alt="" loading="lazy"><h4>강민준</h4><span class="mono">Partner · M&amp;A</span><span class="bg">前 삼일PwC Deals 상무 · KICPA</span></div>
+    <div class="pt" data-p="3"><span class="mono">P/04</span><img class="av" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&q=70" alt="" loading="lazy"><h4>이도현</h4><span class="mono">Partner · Digital</span><span class="bg">前 Accenture 디지털 전략 리드 · KAIST 산업공학</span></div>
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<section class="pad testi">
-  <div class="container">
-    <div class="qmark rv">“</div>
-    <div class="testi-slider">
-      <div class="testi-item on">
-        <blockquote>컨설팅 보고서는 많이 받아봤지만, 실행 현장까지 함께 들어와 결과를 만든 곳은 메리디안이 처음이었습니다.</blockquote>
-        <cite>김OO 대표이사<span>중견 제조 A사</span></cite>
-      </div>
-      <div class="testi-item">
-        <blockquote>파트너가 처음부터 끝까지 직접 챙겨준다는 약속을 정말로 지켰습니다. 의사결정의 속도가 완전히 달라졌습니다.</blockquote>
-        <cite>이OO 원장<span>B의료원</span></cite>
-      </div>
-      <div class="testi-item">
-        <blockquote>인수 이후 통합 과정에서 생길 수 있는 리스크를 미리 짚어준 덕분에 9개월 만에 시너지를 확인할 수 있었습니다.</blockquote>
-        <cite>박OO 전략기획실장<span>유통 그룹 C사</span></cite>
-      </div>
-    </div>
-    <div class="testi-dots" id="tdots"><button class="on" aria-label="1"></button><button aria-label="2"></button><button aria-label="3"></button></div>
+<div class="pt-float" id="ptFloat"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=750&fit=crop&q=75" alt=""><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop&q=75" alt=""><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=750&fit=crop&q=75" alt=""><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=750&fit=crop&q=75" alt=""></div>
+
+<!-- INSIGHTS -->
+<section class="insights wrap" id="insights">
+  <div class="sh">
+    <span class="mono">(06) — Insights</span>
+    <h2 class="rv">현장에서 쓴<br>인사이트.</h2>
+  </div>
+  <div class="ins-grid">
+    <a class="ins rv" href="#contact"><div class="im"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" alt="" loading="lazy"><span class="cat mono">Report</span></div><div class="meta mono"><span>2026 Outlook</span><span>12 min</span></div><h3><span>2027 중견기업 성장 전략 보고서: 불확실성 속 '선택과 집중'의 기준</span></h3><span class="rd">리포트 받기 →</span></a>
+    <a class="ins rv" href="#contact"><div class="im"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=80" alt="" loading="lazy"><span class="cat mono">Column</span></div><div class="meta mono"><span>Organization</span><span>6 min</span></div><h3><span>조직 개편이 실패하는 세 가지 이유</span></h3><span class="rd">읽기 →</span></a>
+    <a class="ins rv" href="#contact"><div class="im"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80" alt="" loading="lazy"><span class="cat mono">Case Note</span></div><div class="meta mono"><span>M&amp;A</span><span>8 min</span></div><h3><span>PMI 100일, 시너지는 첫 주에 결정된다</span></h3><span class="rd">읽기 →</span></a>
   </div>
 </section>
 
-<!-- TEAM -->
-<section class="pad" id="team">
-  <div class="container">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow rv">Senior Partners</span>
-        <h2 class="h-sec rv d1">프로젝트를 이끄는<br><em>시니어 파트너</em></h2>
-      </div>
-      <p class="lead rv d2">평균 경력 18년. 각 분야 최고의 전문가가 고객사의 프로젝트를 직접 책임집니다.</p>
+<!-- FAQ -->
+<section class="faq wrap">
+  <div class="faq-grid">
+    <div><span class="mono">(07) — FAQ</span><h2 class="rv" style="margin-top:14px">자주 묻는<br>질문.</h2></div>
+    <div>
+      <div class="fq open"><button>프로젝트 비용은 어떻게 책정되나요?<i>+</i></button><div class="a"><div><p>범위와 기간, 투입 인력에 따라 고정 수수료로 산정합니다. 일부 프로젝트는 성과 연동형 보수 구조도 가능합니다. 무료 진단 미팅 후 1주일 이내에 제안서를 드립니다.</p></div></div></div>
+      <div class="fq"><button>중소·중견기업도 의뢰할 수 있나요?<i>+</i></button><div class="a"><div><p>네. 고객의 절반 이상이 연 매출 300억~3,000억 규모의 중견기업입니다. 규모에 맞춘 경량형 프로그램도 운영합니다.</p></div></div></div>
+      <div class="fq"><button>기밀 유지는 어떻게 보장되나요?<i>+</i></button><div class="a"><div><p>첫 미팅 전 NDA를 체결하며, 프로젝트 자료는 전용 보안 서버에서만 관리합니다. 동일 산업 내 경쟁사 프로젝트는 동시에 수임하지 않습니다.</p></div></div></div>
+      <div class="fq"><button>무료 진단은 어떻게 진행되나요?<i>+</i></button><div class="a"><div><p>담당 파트너와 90분간 대면 또는 화상으로 진행합니다. 현재 상황과 핵심 과제, 예상 접근법을 정리한 1페이지 요약을 드립니다.</p></div></div></div>
     </div>
-    <div class="team-grid">
-      <div class="member rv">
-        <div class="mono">JH</div>
-        <h4>한정우</h4>
-        <div class="role">FOUNDER · MANAGING PARTNER</div>
-        <p>기업 전략과 사업 포트폴리오 재편 분야에서 20년 이상 대기업·중견기업의 성장 전략을 이끌어 왔습니다.</p>
-        <div class="cred">前 McKinsey &amp; Company 서울사무소 파트너<br>Wharton School MBA</div>
-      </div>
-      <div class="member rv d1">
-        <div class="mono">SY</div>
-        <h4>윤서연</h4>
-        <div class="role">PARTNER · ORGANIZATION</div>
-        <p>조직 설계와 인사 혁신 전문가. 의료·서비스 산업의 조직 문화 전환 프로젝트를 다수 수행했습니다.</p>
-        <div class="cred">前 BCG 프린시펄<br>서울대학교 경영학 박사</div>
-      </div>
-      <div class="member rv d2">
-        <div class="mono">MK</div>
-        <h4>강민준</h4>
-        <div class="role">PARTNER · M&amp;A ADVISORY</div>
-        <p>국내외 크로스보더 M&amp;A 40건 이상을 자문한 거래 전문가. 실사부터 PMI까지 전 과정을 리드합니다.</p>
-        <div class="cred">前 삼일PwC Deals 본부 상무<br>한국공인회계사 (KICPA)</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BAND -->
-<section class="band">
-  <div class="band-bg"></div>
-  <div class="container">
-    <span class="eyebrow rv" style="justify-content:center">Complimentary Diagnosis</span>
-    <h2 class="rv d1" style="margin-top:22px">첫 상담은 <em>무료 경영 진단</em>으로<br>시작합니다.</h2>
-    <p class="rv d2">90분의 파트너 미팅으로 현재 상황과 핵심 과제를 정리해 드립니다. 부담 없이 문의하세요.</p>
-    <a href="#contact" class="btn btn-gold rv d3">진단 상담 예약하기 <span class="arr">→</span></a>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="pad" id="contact">
-  <div class="container contact-grid">
-    <div>
-      <span class="eyebrow rv">Contact</span>
-      <h2 class="h-sec rv d1">새로운 방향을<br><em>함께 그려보시겠습니까?</em></h2>
-      <p class="lead rv d2">문의를 남겨주시면 담당 파트너가 영업일 기준 24시간 이내에 직접 연락드립니다. 모든 상담 내용은 엄격한 비밀유지 원칙에 따라 보호됩니다.</p>
-      <dl class="info-list rv d3">
-        <div><dt>ADDRESS</dt><dd>서울특별시 중구 세종대로 136, 서울파이낸스센터 32F</dd></div>
-        <div><dt>TEL</dt><dd>02-6250-0900</dd></div>
-        <div><dt>EMAIL</dt><dd>contact@meridian-consulting.kr</dd></div>
-        <div><dt>HOURS</dt><dd>평일 09:00 – 18:00 (주말·공휴일 예약 상담)</dd></div>
-      </dl>
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="mono">(08) — Contact</span>
+    <a href="#cform" class="talk">Let’s talk <span class="ball">↗</span></a>
+    <div class="c-grid">
+      <div class="c-info">
+        <dl>
+          <div><dt class="mono">Email</dt><dd><a href="mailto:contact@meridian-consulting.kr">contact@meridian-consulting.kr</a></dd></div>
+          <div><dt class="mono">Tel</dt><dd>02 · 6250 · 0900</dd></div>
+          <div><dt class="mono">Office</dt><dd>서울 중구 세종대로 136, 32F</dd></div>
+          <div><dt class="mono">Response</dt><dd>영업일 기준 24시간 이내 파트너 회신</dd></div>
+        </dl>
+      </div>
+      <form id="cform">
+        <div class="in"><input id="n" placeholder=" " required><label for="n">성함</label></div>
+        <div class="in"><input id="c" placeholder=" " required><label for="c">회사 / 직책</label></div>
+        <div class="in"><input id="t" type="tel" placeholder=" " required><label for="t">연락처</label></div>
+        <div class="in"><input id="e" type="email" placeholder=" "><label for="e">이메일</label></div>
+        <div class="chips">
+          <p class="mono">관심 분야</p>
+          <input type="checkbox" id="k1"><label for="k1">경영 전략</label>
+          <input type="checkbox" id="k2"><label for="k2">조직 · 인사</label>
+          <input type="checkbox" id="k3"><label for="k3">디지털 전환</label>
+          <input type="checkbox" id="k4"><label for="k4">M&amp;A · 투자</label>
+          <input type="checkbox" id="k5"><label for="k5">아직 모르겠어요</label>
+        </div>
+        <div class="in full"><textarea id="m" placeholder=" "></textarea><label for="m">고민하고 계신 과제를 간단히 적어주세요</label></div>
+        <button class="pill mag" type="submit">상담 신청하기 <span class="ar">→</span></button>
+        <div class="done" id="done">접수되었습니다. 담당 파트너가 24시간 이내에 연락드리겠습니다.</div>
+      </form>
     </div>
-    <form class="cform rv d1" id="cform">
-      <div class="field"><label for="f-name">성함 *</label><input id="f-name" required placeholder="홍길동"></div>
-      <div class="field"><label for="f-co">회사명 / 직책 *</label><input id="f-co" required placeholder="메리디안 / 대표"></div>
-      <div class="field"><label for="f-tel">연락처 *</label><input id="f-tel" type="tel" required placeholder="010-0000-0000"></div>
-      <div class="field"><label for="f-mail">이메일</label><input id="f-mail" type="email" placeholder="name@company.com"></div>
-      <div class="field full"><label for="f-svc">관심 분야</label>
-        <select id="f-svc"><option>경영 전략</option><option>조직·인사 혁신</option><option>디지털 전환</option><option>M&amp;A · 투자 자문</option><option>기타 / 아직 모르겠어요</option></select>
-      </div>
-      <div class="field full"><label for="f-msg">문의 내용</label><textarea id="f-msg" placeholder="현재 고민하고 계신 과제를 간단히 적어주세요."></textarea></div>
-      <label class="agree"><input type="checkbox" required> 개인정보 수집 및 이용에 동의합니다. (필수)</label>
-      <div class="form-foot">
-        <small>* 표시는 필수 입력 항목입니다.</small>
-        <button type="submit" class="btn btn-gold">상담 신청하기 <span class="arr">→</span></button>
-      </div>
-      <div class="form-msg" id="fmsg">문의가 접수되었습니다. 담당 파트너가 곧 연락드리겠습니다.</div>
-    </form>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    <div class="foot-top">
-      <div>
-        <a href="#top" class="logo">
-          <div class="logo-mark"><i></i></div>
-          <div class="logo-text">MERIDIAN<small>STRATEGY CONSULTING</small></div>
-        </a>
-        <p>결정의 순간, 가장 정확한 방향을. 메리디안은 기업의 지속 가능한 성장을 설계하는 전략 컨설팅 파트너입니다.</p>
-      </div>
-      <div class="foot-cols">
-        <div><h5>COMPANY</h5><a href="#about">회사 소개</a><a href="#team">파트너</a><a href="#cases">프로젝트 사례</a></div>
-        <div><h5>SERVICES</h5><a href="#services">경영 전략</a><a href="#services">조직·인사 혁신</a><a href="#services">디지털 전환</a><a href="#services">M&amp;A 자문</a></div>
-        <div><h5>CONTACT</h5><a href="tel:0262500900">02-6250-0900</a><a href="#contact">상담 신청</a></div>
-      </div>
-    </div>
-    <div class="foot-bot">
-      <span>메리디안컨설팅(주) · 대표 한정우 · 사업자등록번호 000-00-00000</span>
-      <span>© 2026 MERIDIAN Consulting. All rights reserved.</span>
+  <div class="wrap">
+    <div class="ft mono">
+      <span>© 2026 Meridian Consulting Inc.</span>
+      <span>사업자등록번호 000-00-00000 · 대표 한정우</span>
+      <span class="ft-social"><a href="#contact">LinkedIn</a><a href="#contact">Instagram</a><a href="#contact">Newsletter</a></span>
+      <a href="#top">Back to top ↑</a>
     </div>
   </div>
+  <div class="wordmark">Meridian<sup>®</sup></div>
 </footer>
 
 <script>
-// header
-const hdr=document.getElementById('hdr');
-addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40),{passive:true});
+document.body.classList.add('loading');
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const mobile=()=>innerWidth<=960;
+
+// clock
+function tick(){const t=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit'});$('#clock').textContent='SEOUL '+t}
+tick();setInterval(tick,10000);
 
 // mobile menu
-const burger=document.getElementById('burger'),mm=document.getElementById('mmenu');
-burger.onclick=()=>{burger.classList.toggle('on');mm.classList.toggle('on');document.body.style.overflow=mm.classList.contains('on')?'hidden':''};
-mm.querySelectorAll('a').forEach(a=>a.onclick=()=>{burger.classList.remove('on');mm.classList.remove('on');document.body.style.overflow=''});
+$('#mOpen').onclick=()=>$('#ov').classList.add('on');
+$('#mClose').onclick=()=>$('#ov').classList.remove('on');
+$$('#ov nav a').forEach(a=>a.onclick=()=>$('#ov').classList.remove('on'));
+
+// statement words
+const st=$('#stmt');
+(function split(node){[...node.childNodes].forEach(n=>{
+  if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(w=>{if(!w.trim()){f.append(w);return}const s=document.createElement('span');s.className='w';s.textContent=w;f.append(s)});n.replaceWith(f)}
+  else split(n)})})(st);
+const words=$$('#stmt .w');
 
 // reveal + counters
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(!e.isIntersecting)return;
-  e.target.classList.add('in');
-  e.target.querySelectorAll('.count').forEach(runCount);
-  io.unobserve(e.target);
-}),{threshold:.15});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-function runCount(el){
-  const to=parseFloat(el.dataset.to),dec=+el.dataset.dec||0,t0=performance.now(),dur=2000;
-  (function f(t){const p=Math.min((t-t0)/dur,1),v=to*(1-Math.pow(1-p,4));el.textContent=v.toFixed(dec);if(p<1)requestAnimationFrame(f)})(t0);
-}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');e.target.querySelectorAll('.cnt').forEach(count);io.unobserve(e.target)}),{threshold:.2});
+$$('.rv').forEach(el=>io.observe(el));
+function count(el){const to=+el.dataset.to,d=+el.dataset.d||0,t0=performance.now();(function f(t){const p=Math.min((t-t0)/1800,1);el.textContent=(to*(1-Math.pow(1-p,4))).toFixed(d);if(p<1)requestAnimationFrame(f)})(t0)}
 
-// testimonials
-const items=document.querySelectorAll('.testi-item'),dots=document.querySelectorAll('#tdots button');let ti=0,tt;
-function showT(i){items[ti].classList.remove('on');dots[ti].classList.remove('on');ti=i;items[ti].classList.add('on');dots[ti].classList.add('on')}
-function autoT(){clearInterval(tt);tt=setInterval(()=>showT((ti+1)%items.length),6000)}
-dots.forEach((d,i)=>d.onclick=()=>{showT(i);autoT()});autoT();
+// services accordion + floating image
+const fi=$('#floatImg'),fimgs=fi.querySelectorAll('img');let mx=0,my=0,fx=0,fy=0;
+$$('.svc-row').forEach(r=>{
+  r.onclick=()=>{const o=r.classList.contains('open');$$('.svc-row').forEach(x=>x.classList.remove('open'));if(!o)r.classList.add('open')};
+  r.onmouseenter=()=>{fi.classList.add('on');fimgs.forEach((im,i)=>im.classList.toggle('on',i==r.dataset.img))};
+  r.onmouseleave=()=>fi.classList.remove('on');
+});
+addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+(function loop(){fx+=(mx-fx)*.12;fy+=(my-fy)*.12;fi.style.left=fx+'px';fi.style.top=fy+'px';requestAnimationFrame(loop)})();
+
+// faq
+$$('.fq button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
 
 // form
-document.getElementById('cform').addEventListener('submit',e=>{
-  e.preventDefault();document.getElementById('fmsg').classList.add('on');e.target.reset();
-});
+$('#cform').onsubmit=e=>{e.preventDefault();const b=e.target.querySelector('button');const t=b.innerHTML;b.classList.add('busy');b.innerHTML='전송 중…';setTimeout(()=>{b.classList.remove('busy');b.innerHTML=t;$('#done').classList.add('on');e.target.reset()},900)};
 
-// gold constellation canvas
-(()=>{
-  const c=document.getElementById('stars'),x=c.getContext('2d');let w,h,pts=[],mouse={x:-999,y:-999};
-  const dpr=Math.min(devicePixelRatio||1,2);
-  function size(){w=c.offsetWidth;h=c.offsetHeight;c.width=w*dpr;c.height=h*dpr;x.setTransform(dpr,0,0,dpr,0,0);
-    const n=Math.min(110,Math.floor(w*h/14000));pts=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.6+.3,tw:Math.random()*Math.PI*2}))}
-  c.parentElement.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top});
-  c.parentElement.addEventListener('mouseleave',()=>{mouse.x=mouse.y=-999});
-  function draw(){
-    x.clearRect(0,0,w,h);
-    for(const p of pts){
-      p.x+=p.vx;p.y+=p.vy;p.tw+=.02;
-      if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;
-      const a=.35+Math.sin(p.tw)*.3;
-      x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle=`rgba(212,175,55,${a})`;x.fill();
-    }
-    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
-      const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-      if(d<120){x.strokeStyle=`rgba(212,175,55,${(1-d/120)*.16})`;x.lineWidth=.6;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
-    }
-    for(const p of pts){const d=Math.hypot(p.x-mouse.x,p.y-mouse.y);
-      if(d<170){x.strokeStyle=`rgba(230,204,122,${(1-d/170)*.5})`;x.lineWidth=.7;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(mouse.x,mouse.y);x.stroke()}}
-    requestAnimationFrame(draw);
-  }
-  addEventListener('resize',size);size();draw();
+// process steps
+const steps=$$('.step'),pn=$('#procNum'),pb=$('#procBar');
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){steps.forEach(s=>s.classList.remove('on'));e.target.classList.add('on');const i=e.target.dataset.i;if(pn.textContent!==i){pn.style.transform='translateY(-12%)';pn.style.opacity=0;setTimeout(()=>{pn.textContent=i;pn.style.transform='none';pn.style.opacity=1},250)}pb.style.width=(+i*25)+'%'}}),{rootMargin:'-45% 0px -45% 0px'});
+steps.forEach(s=>so.observe(s));
+
+// scroll-driven
+const frame=$('#frame'),rimg=$('#rimg'),rImg=$('#rimgImg'),cap=$('#cap'),casesH=$('#casesH'),track=$('#track'),cBar=$('#cBar'),cIdx=$('#cIdx');
+const hdr=$('#hdr'),darkEls=[$('#cases'),$('#contact'),document.querySelector('footer')];
+function onScroll(){
+  const vh=innerHeight;
+  hdr.classList.toggle('solid',scrollY>40);
+  let dk=null;darkEls.forEach(el=>{const b=el.getBoundingClientRect();if(b.top<=38&&b.bottom>=38)dk=el});
+  hdr.classList.toggle('dark',!!dk);hdr.classList.toggle('green',dk&&dk.id==='cases');
+  // statement
+  words.forEach(w=>{const r=w.getBoundingClientRect();w.classList.toggle('on',r.top<vh*.72)});
+  if(mobile())return;
+  // expanding image
+  const r=rimg.getBoundingClientRect(),p=Math.min(Math.max(-r.top/(r.height-vh),0),1);
+  const e=1-Math.pow(1-p,2);
+  frame.style.clipPath=`inset(${18*(1-e)}% ${22*(1-e)}% ${18*(1-e)}% ${22*(1-e)}% round ${24*(1-e)}px)`;
+  rImg.style.transform=`scale(${1.2-.2*e})`;
+  cap.classList.toggle('on',p>.55);
+  // horizontal cases
+  const c=casesH.getBoundingClientRect(),cp=Math.min(Math.max(-c.top/(c.height-vh),0),1);
+  const max=track.scrollWidth-innerWidth+ (innerWidth*0.04);
+  track.style.transform=`translateX(${-max*cp}px)`;
+  cBar.style.width=(cp*100)+'%';
+  cIdx.textContent=String(Math.min(5,Math.floor(cp*4.999)+1)).padStart(2,'0')+' / 05';
+}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+
+// ===== upgrade =====
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let lenis=null;
+if(window.Lenis&&!reduce){lenis=new Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});
+  (function raf(t){lenis.raf(t);requestAnimationFrame(raf)})(performance.now());lenis.stop();}
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');const el=id==='#top'?document.body:document.querySelector(id);if(!el)return;e.preventDefault();if(lenis)lenis.scrollTo(id==='#top'?0:el,{offset:-10,duration:1.4});else el.scrollIntoView({behavior:'smooth'})}));
+(function(){const L=$('#loader'),lc=$('#lc'),lb=$('#lbar');
+  const done=()=>{L.classList.add('out');document.body.classList.remove('loading');if(lenis)lenis.start();setTimeout(()=>L.remove(),1200)};
+  if(reduce||sessionStorage.getItem('mer-seen')){L.remove();document.body.classList.remove('loading');if(lenis)lenis.start();return}
+  sessionStorage.setItem('mer-seen','1');
+  const t0=performance.now(),dur=1700;
+  (function f(t){const p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);lc.textContent=String(Math.round(e*100)).padStart(3,'0');lb.style.width=(e*100)+'%';if(p<1)requestAnimationFrame(f);else setTimeout(done,250)})(t0);
 })();
+(function(){if(matchMedia('(hover:none),(pointer:coarse)').matches)return;
+  const c=$('#cur'),r=$('#curR'),lab=$('#curL');let x=innerWidth/2,y=innerHeight/2,rx=x,ry=y;
+  addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY;c.style.left=x+'px';c.style.top=y+'px'});
+  (function l(){rx+=(x-rx)*.16;ry+=(y-ry)*.16;r.style.left=rx+'px';r.style.top=ry+'px';requestAnimationFrame(l)})();
+  document.addEventListener('mouseover',e=>{const t=e.target;
+    const labEl=t.closest('[data-cursor]');
+    r.classList.toggle('lab',!!labEl);if(labEl)lab.textContent=labEl.dataset.cursor;
+    r.classList.toggle('hov',!labEl&&!!t.closest('a,button,label,.svc-row,.fq'));
+    const dk=!!t.closest('.cases,.contact,footer');r.classList.toggle('on-dark',dk);c.classList.toggle('on-dark',dk);
+  });
+})();
+$$('.case:not(.end)').forEach(el=>el.dataset.cursor='Scroll');
+$$('.ins').forEach(el=>el.dataset.cursor='Read');
+$$('.mag').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.25)+'px,'+((e.clientY-r.top-r.height/2)*.35)+'px)'});b.addEventListener('mouseleave',()=>b.style.transform='')});
+(function(){const pf=$('#ptFloat'),ims=pf.querySelectorAll('img');let mx=0,my=0,px=0,py=0;
+  $$('.pt').forEach(p=>{p.addEventListener('mouseenter',()=>{if(innerWidth<=960)return;pf.classList.add('on');ims.forEach((im,i)=>im.classList.toggle('on',i==p.dataset.p))});p.addEventListener('mouseleave',()=>pf.classList.remove('on'))});
+  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+  (function l(){px+=(mx-px)*.12;py+=(my-py)*.12;pf.style.left=(px+130)+'px';pf.style.top=py+'px';requestAnimationFrame(l)})();
+})();
+const prog=$('#prog'),navLinks=$$('.hd nav a'),navSecs=navLinks.map(a=>document.querySelector(a.getAttribute('href')));
+addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;prog.style.transform='scaleX('+(scrollY/m)+')';
+  let ai=-1;navSecs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<innerHeight*.4)ai=i});navLinks.forEach((a,i)=>a.classList.toggle('act',i===ai&&navSecs[i].getBoundingClientRect().bottom>80))},{passive:true});
 </script>
 </body>
 </html>
